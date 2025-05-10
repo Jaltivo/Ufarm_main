@@ -26,7 +26,8 @@ public class Home extends    javax.swing.JFrame {
         });
     }
     private void AccMouseClicked(java.awt.event.MouseEvent evt) {
-        new Login().setVisible(true);        
+        new Login().setVisible(true);  
+        this.dispose();
     }
     
 
