@@ -24,9 +24,21 @@ public class Home extends    javax.swing.JFrame {
                 AccMouseClicked(evt); // Call custom method
             }
         });
+        
+        Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FeedbackMouseClicked(evt); // Call custom method
+            }
+        });        
     }
     private void AccMouseClicked(java.awt.event.MouseEvent evt) {
         new Login().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
+        new Feedback().setVisible(true);  
         this.dispose();
     }
     
