@@ -4,10 +4,6 @@
  */
 package ufarm;
 
-/**
- *
- * @author Jasmine
- */
 public class UFarm {
 
     public static void main(String[] args) {
