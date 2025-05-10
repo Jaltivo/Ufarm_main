@@ -16,14 +16,26 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
 
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt); // Call custom method
+            }
+        });             
+
         Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FeedbackMouseClicked(evt); // Call custom method
             }
-        });             
+        });  
         
     }
+
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
+        new Home().setVisible(true);  
+        this.dispose();
+    }    
     
     private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
         new Feedback().setVisible(true);  
