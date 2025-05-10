@@ -7,7 +7,7 @@ package ufarm;
 public class UFarm {
 
     public static void main(String[] args) {
-        
+    new Home().setVisible(true);
     }
     
 }
