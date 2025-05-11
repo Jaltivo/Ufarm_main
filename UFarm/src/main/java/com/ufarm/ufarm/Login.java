@@ -392,6 +392,7 @@ public class Login extends javax.swing.JFrame {
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Invalid email or password", "Error", JOptionPane.ERROR_MESSAGE);
+            this.dispose();
         }        
     }//GEN-LAST:event_LoginActionPerformed
 
