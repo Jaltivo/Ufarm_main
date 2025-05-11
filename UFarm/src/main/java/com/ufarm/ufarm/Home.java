@@ -32,6 +32,13 @@ public class Home extends    javax.swing.JFrame {
             }
         });
         
+        Produce.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProduceMouseClicked(evt); // Call custom method
+            }
+        });
+        
         Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -41,6 +48,11 @@ public class Home extends    javax.swing.JFrame {
     }
     
     private void AccMouseClicked(java.awt.event.MouseEvent evt) {
+        new Login().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void ProduceMouseClicked(java.awt.event.MouseEvent evt) {
         new Login().setVisible(true);  
         this.dispose();
     }
