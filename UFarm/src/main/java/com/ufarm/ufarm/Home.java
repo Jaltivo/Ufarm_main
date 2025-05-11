@@ -25,12 +25,12 @@ public class Home extends    javax.swing.JFrame {
         initComponents();
         
         // Add MouseListener to Acc (JLabel)
-        Acc.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AccMouseClicked(evt); // Call custom method
-            }
-        });
+        //Acc.addMouseListener(new java.awt.event.MouseAdapter() {
+        //    @Override
+        //    public void mouseClicked(java.awt.event.MouseEvent evt) {
+        //        AccMouseClicked(evt); // Call custom method
+        //    }
+        //});
         
         Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -40,10 +40,10 @@ public class Home extends    javax.swing.JFrame {
         });        
     }
     
-    private void AccMouseClicked(java.awt.event.MouseEvent evt) {
-        new Login().setVisible(true);  
-        this.dispose();
-    }
+    //private void AccMouseClicked(java.awt.event.MouseEvent evt) {
+    //    new Login().setVisible(true);  
+    //    this.dispose();
+    //}
     
     private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
         new Feedback().setVisible(true);  
