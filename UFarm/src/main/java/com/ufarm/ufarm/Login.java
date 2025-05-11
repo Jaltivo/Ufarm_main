@@ -388,6 +388,8 @@ public class Login extends javax.swing.JFrame {
             // Open main application window here
             // new MainApplication().setVisible(true);
             // this.dispose();
+            new Home().setVisible(true);  
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Invalid email or password", "Error", JOptionPane.ERROR_MESSAGE);
         }        

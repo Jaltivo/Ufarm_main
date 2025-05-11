@@ -51,7 +51,7 @@ public class Feedback extends javax.swing.JFrame {
     }
     
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
-        new Feedback().setVisible(true);  
+        new Home().setVisible(true);  
         this.dispose();
     }
     
