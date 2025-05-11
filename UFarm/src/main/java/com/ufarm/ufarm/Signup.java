@@ -15,7 +15,21 @@ public class Signup extends javax.swing.JFrame {
      */
     public Signup() {
         initComponents();
+        
+        SignIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AccMouseClicked(evt); // Call custom method
+            }
+        });
+              
     }
+    
+    private void AccMouseClicked(java.awt.event.MouseEvent evt) {
+        new Login().setVisible(true);  
+        this.dispose();
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +54,7 @@ public class Signup extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         ConPasswordField2 = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
+        SignIn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -172,8 +186,8 @@ public class Signup extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jLabel1.setText("Already have an account? Sign in.");
+        SignIn.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        SignIn.setText("Already have an account? Sign in.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -198,7 +212,7 @@ public class Signup extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(300, 300, 300))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(SignIn)
                         .addGap(253, 253, 253))))
         );
         layout.setVerticalGroup(
@@ -217,7 +231,7 @@ public class Signup extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
+                .addComponent(SignIn)
                 .addGap(8, 8, 8))
         );
 
@@ -271,8 +285,8 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JTextField Namefield;
     private javax.swing.JLabel Pass;
     private javax.swing.JLabel Register;
+    private javax.swing.JLabel SignIn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
