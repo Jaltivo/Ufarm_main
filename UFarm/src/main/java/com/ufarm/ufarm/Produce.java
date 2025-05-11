@@ -37,6 +37,13 @@ public class Produce extends javax.swing.JFrame {
             }
         }); 
         
+        Page2.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Page2MouseClicked(evt); // Call custom method
+            }
+        });
+        
     }
 
     
@@ -52,6 +59,11 @@ public class Produce extends javax.swing.JFrame {
     
     private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
         new Feedback().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void Page2MouseClicked(java.awt.event.MouseEvent evt) {
+        new Produce2().setVisible(true);  
         this.dispose();
     }
     
@@ -125,9 +137,9 @@ public class Produce extends javax.swing.JFrame {
         jPanel18 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        Page1 = new javax.swing.JLabel();
+        Page2 = new javax.swing.JLabel();
+        Page3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -742,19 +754,19 @@ public class Produce extends javax.swing.JFrame {
         jLabel6.setText(" > ");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jLabel7.setBackground(new java.awt.Color(102, 51, 0));
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("  1 ");
-        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Page1.setBackground(new java.awt.Color(102, 51, 0));
+        Page1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        Page1.setForeground(new java.awt.Color(255, 255, 255));
+        Page1.setText("  1 ");
+        Page1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("  2  ");
-        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Page2.setForeground(new java.awt.Color(255, 255, 255));
+        Page2.setText("  2  ");
+        Page2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("  3  ");
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Page3.setForeground(new java.awt.Color(255, 255, 255));
+        Page3.setText("  3  ");
+        Page3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -763,11 +775,11 @@ public class Produce extends javax.swing.JFrame {
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Page1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel8)
+                .addComponent(Page2)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel9)
+                .addComponent(Page3)
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
@@ -777,10 +789,10 @@ public class Produce extends javax.swing.JFrame {
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Page1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Page2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Page3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -901,6 +913,9 @@ public class Produce extends javax.swing.JFrame {
     private javax.swing.JPanel FeedbackPanel1;
     private javax.swing.JLabel Home;
     private javax.swing.JPanel HomePanel;
+    private javax.swing.JLabel Page1;
+    private javax.swing.JLabel Page2;
+    private javax.swing.JLabel Page3;
     private javax.swing.JLabel Produce;
     private javax.swing.JPanel ProducePanel;
     private javax.swing.JLabel Title;
@@ -934,9 +949,6 @@ public class Produce extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
