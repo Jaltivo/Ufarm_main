@@ -53,7 +53,7 @@ public class Home extends    javax.swing.JFrame {
     }
     
     private void ProduceMouseClicked(java.awt.event.MouseEvent evt) {
-        new Login().setVisible(true);  
+        new Produce().setVisible(true);  
         this.dispose();
     }
     

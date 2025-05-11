@@ -15,7 +15,47 @@ public class Feedback extends javax.swing.JFrame {
      */
     public Feedback() {
         initComponents();
+        
+        Acc.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AccMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Produce.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProduceMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt); // Call custom method
+            }
+        });   
+        
     }
+    
+    private void AccMouseClicked(java.awt.event.MouseEvent evt) {
+        new Login().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void ProduceMouseClicked(java.awt.event.MouseEvent evt) {
+        new Produce().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
+        new Feedback().setVisible(true);  
+        this.dispose();
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

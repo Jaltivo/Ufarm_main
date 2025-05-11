@@ -21,6 +21,20 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        
+        GoToSignup.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GoToSignupMouseClicked(evt); // Call custom method
+            }
+        });
+        
+    }
+    
+    
+    private void GoToSignupMouseClicked(java.awt.event.MouseEvent evt) {
+        new Signup().setVisible(true);  
+        this.dispose();
     }
 
     /**
@@ -39,10 +53,9 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         Remember = new javax.swing.JCheckBox();
         Login = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        GoToSignup = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(919, 499));
 
         HI.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
         HI.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -73,8 +86,8 @@ public class Login extends javax.swing.JFrame {
         Login.setText("LOG IN");
         Login.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jLabel1.setFont(new java.awt.Font("Georgia", 0, 16)); // NOI18N
-        jLabel1.setText("Don't have an account yet? Sign up.");
+        GoToSignup.setFont(new java.awt.Font("Georgia", 0, 16)); // NOI18N
+        GoToSignup.setText("Don't have an account yet? Sign up.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,7 +111,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(254, 254, 254)
-                        .addComponent(jLabel1))
+                        .addComponent(GoToSignup))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(315, 315, 315)
                         .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -122,7 +135,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addComponent(Login)
                 .addGap(29, 29, 29)
-                .addComponent(jLabel1)
+                .addComponent(GoToSignup)
                 .addGap(30, 30, 30))
         );
 
@@ -169,13 +182,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel GoToSignup;
     private javax.swing.JLabel HI;
     private javax.swing.JButton Login;
     private javax.swing.JLabel Name;
     private javax.swing.JTextField Namefield;
     private javax.swing.JLabel Pass;
     private javax.swing.JCheckBox Remember;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
 }
