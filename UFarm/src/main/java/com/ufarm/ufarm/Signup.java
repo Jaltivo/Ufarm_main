@@ -463,7 +463,7 @@ public class Signup extends javax.swing.JFrame {
         String email = Emailfield.getText().trim();
         String password = new String(jPasswordField1.getPassword());
         String confirmPassword = new String(ConPasswordField2.getPassword());
-    
+
         // Validate inputs
         if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all fields", "Error", JOptionPane.ERROR_MESSAGE);
@@ -480,13 +480,21 @@ public class Signup extends javax.swing.JFrame {
             return;
         }
 
-        // Here you would typically save the user data to a database
-        // For now, we'll just show a success message
-        JOptionPane.showMessageDialog(this, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        // Check if email is already registered
+        AccountDatabase db = new AccountDatabase();
+        if (db.emailExists(email)) {
+            JOptionPane.showMessageDialog(this, "Email already registered", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-        // Open login screen
-        new Login().setVisible(true);
-        this.dispose();                        
+        // Register the user
+        if (db.register(name, email, password)) {
+            JOptionPane.showMessageDialog(this, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            new Login().setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Registration failed", "Error", JOptionPane.ERROR_MESSAGE);
+        }                   
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
