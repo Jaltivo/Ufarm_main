@@ -44,6 +44,13 @@ public class Produce extends javax.swing.JFrame {
             }
         });
         
+        Page3.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Page3MouseClicked(evt); // Call custom method
+            }
+        });
+        
     }
 
     
@@ -64,6 +71,11 @@ public class Produce extends javax.swing.JFrame {
     
     private void Page2MouseClicked(java.awt.event.MouseEvent evt) {
         new Produce2().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void Page3MouseClicked(java.awt.event.MouseEvent evt) {
+        new Produce3().setVisible(true);  
         this.dispose();
     }
     

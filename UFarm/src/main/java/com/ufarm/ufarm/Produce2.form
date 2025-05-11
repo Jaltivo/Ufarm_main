@@ -774,11 +774,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel20" min="-2" pref="22" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="jLabel22" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="Page1" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                  <Component id="Page2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                  <Component id="Page3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   <Component id="jLabel21" min="-2" pref="24" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -790,12 +790,12 @@
               <Component id="jLabel20" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel22" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="jLabel23" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="Page1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="Page2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
-              <Component id="jLabel24" alignment="1" max="32767" attributes="0"/>
+              <Component id="Page3" alignment="1" max="32767" attributes="0"/>
               <Component id="jLabel21" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
@@ -831,7 +831,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel22">
+        <Component class="javax.swing.JLabel" name="Page1">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -846,7 +846,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel23">
+        <Component class="javax.swing.JLabel" name="Page2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="14" style="1"/>
@@ -864,7 +864,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel24">
+        <Component class="javax.swing.JLabel" name="Page3">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
