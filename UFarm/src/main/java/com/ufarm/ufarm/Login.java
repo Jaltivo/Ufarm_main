@@ -35,10 +35,22 @@ public class Login extends javax.swing.JFrame {
             }
         });
         
+        Feedback1.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FeedbackMouseClicked(evt); // Call custom method
+            }
+        });   
+        
     }
     
     private void GoToSignupMouseClicked(java.awt.event.MouseEvent evt) {
         new Signup().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
+        new Feedback().setVisible(true);  
         this.dispose();
     }
 
