@@ -27,20 +27,27 @@ public class Login extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 GoToSignupMouseClicked(evt); // Call custom method
             }
-        });
+        });        
         
-        Login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt); // Call custom method
             }
-        });
+        });  
         
         Feedback1.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FeedbackMouseClicked(evt); // Call custom method
             }
-        });   
+        });  
+        
+        Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginActionPerformed(evt);
+            }
+        });
         
     }
     
@@ -49,10 +56,16 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }
     
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
+        new Home().setVisible(true);  
+        this.dispose();
+    }
+    
     private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
         new Feedback().setVisible(true);  
         this.dispose();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
