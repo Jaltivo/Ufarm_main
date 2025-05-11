@@ -29,8 +29,13 @@ public class Login extends javax.swing.JFrame {
             }
         });
         
+        Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginActionPerformed(evt);
+            }
+        });
+        
     }
-    
     
     private void GoToSignupMouseClicked(java.awt.event.MouseEvent evt) {
         new Signup().setVisible(true);  
@@ -85,6 +90,11 @@ public class Login extends javax.swing.JFrame {
         Login.setForeground(new java.awt.Color(255, 255, 255));
         Login.setText("LOG IN");
         Login.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginActionPerformed(evt);
+            }
+        });
 
         GoToSignup.setFont(new java.awt.Font("Georgia", 0, 16)); // NOI18N
         GoToSignup.setText("Don't have an account yet? Sign up.");
@@ -145,6 +155,26 @@ public class Login extends javax.swing.JFrame {
     private void RememberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RememberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RememberActionPerformed
+
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+        String email = Namefield.getText().trim(); // Assuming Namefield is used for email
+        String password = new String(jPasswordField1.getPassword());
+        
+        if (email.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter both email and password", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        AccountDatabase db = new AccountDatabase();
+        if (db.login(email, password)) {
+            JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            // Open main application window here
+            // new MainApplication().setVisible(true);
+            // this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid email or password", "Error", JOptionPane.ERROR_MESSAGE);
+        }        
+    }//GEN-LAST:event_LoginActionPerformed
 
     /**
      * @param args the command line arguments
