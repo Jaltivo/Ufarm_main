@@ -483,6 +483,7 @@ public class Produce3 extends javax.swing.JFrame {
         jLabel23.setText("  2  ");
         jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
+        jLabel24.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("  3  ");
         jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
