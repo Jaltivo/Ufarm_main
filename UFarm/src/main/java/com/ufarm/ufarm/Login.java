@@ -43,11 +43,11 @@ public class Login extends javax.swing.JFrame {
             }
         });  
         
-        Login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
-            }
-        });
+        // Login.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //        LoginActionPerformed(evt);
+        //    }
+        //});
         
     }
     
@@ -65,6 +65,7 @@ public class Login extends javax.swing.JFrame {
         new Feedback().setVisible(true);  
         this.dispose();
     }
+    
     
 
     /**
@@ -411,7 +412,7 @@ public class Login extends javax.swing.JFrame {
         AccountDatabase db = new AccountDatabase();
         if (db.login(email, password)) {
             JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE); 
-            new Home().setVisible(true);  
+            new Produce().setVisible(true);  
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Invalid email or password", "Error", JOptionPane.ERROR_MESSAGE);
