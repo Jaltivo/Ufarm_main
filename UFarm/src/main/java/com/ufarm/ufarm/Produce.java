@@ -8,12 +8,12 @@ package com.ufarm.ufarm;
  *
  * @author Jasmine
  */
-public class Login extends javax.swing.JFrame {
+public class Produce extends javax.swing.JFrame {
 
     /**
-     * Creates new form Login
+     * Creates new form Produce
      */
-    public Login() {
+    public Produce() {
         initComponents();
     }
 
@@ -26,14 +26,6 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        HI = new javax.swing.JLabel();
-        Name = new javax.swing.JLabel();
-        Namefield = new javax.swing.JTextField();
-        Pass = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        Remember = new javax.swing.JCheckBox();
-        Login = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         Dash = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -47,43 +39,12 @@ public class Login extends javax.swing.JFrame {
         Farm = new javax.swing.JLabel();
         FeedbackPanel = new javax.swing.JPanel();
         Feedback = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         FeedbackPanel1 = new javax.swing.JPanel();
         Feedback1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        HI.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
-        HI.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        HI.setText("Hi, please log in. ");
-
-        Name.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
-        Name.setText("Name:");
-
-        Namefield.setForeground(new java.awt.Color(35, 101, 51));
-        Namefield.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 101, 51), 2, true));
-
-        Pass.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
-        Pass.setText("Password:");
-
-        jPasswordField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 101, 51), 2, true));
-
-        Remember.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
-        Remember.setText("Remember me?");
-        Remember.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RememberActionPerformed(evt);
-            }
-        });
-
-        Login.setBackground(new java.awt.Color(35, 101, 51));
-        Login.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
-        Login.setForeground(new java.awt.Color(255, 255, 255));
-        Login.setText("LOG IN");
-        Login.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-
-        jLabel1.setFont(new java.awt.Font("Georgia", 0, 16)); // NOI18N
-        jLabel1.setText("Don't have an account yet? Sign up.");
 
         Dash.setBackground(new java.awt.Color(35, 101, 51));
 
@@ -93,7 +54,7 @@ public class Login extends javax.swing.JFrame {
 
         HomePanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        Home.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Home.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         Home.setForeground(new java.awt.Color(255, 255, 255));
         Home.setText("Home");
 
@@ -114,9 +75,9 @@ public class Login extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        AccPanel.setBackground(new java.awt.Color(102, 51, 0));
+        AccPanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        Acc.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        Acc.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         Acc.setForeground(new java.awt.Color(255, 255, 255));
         Acc.setText("Account");
 
@@ -137,7 +98,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        ProducePanel.setBackground(new java.awt.Color(33, 113, 0));
+        ProducePanel.setBackground(new java.awt.Color(102, 51, 0));
 
         Produce.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         Produce.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,9 +167,9 @@ public class Login extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel2.setText("Agco, Jasmine Jane @2025");
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("Agco, Jasmine Jane @2025");
 
         FeedbackPanel1.setBackground(new java.awt.Color(33, 113, 0));
 
@@ -253,7 +214,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(0, 27, Short.MAX_VALUE))
             .addGroup(DashLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(FeedbackPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -276,72 +237,35 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FeedbackPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addGap(0, 41, Short.MAX_VALUE)
+                .addComponent(jLabel1)
                 .addContainerGap())
         );
+
+        jLabel2.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
+        jLabel2.setText("Available Produce");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(Dash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Name)
-                            .addComponent(Namefield, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Pass)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Remember))
-                        .addGap(119, 119, 119))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(230, 230, 230)
-                                .addComponent(HI))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(288, 288, 288)
-                                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(215, 215, 215)
-                                .addComponent(jLabel1)))
-                        .addContainerGap(918, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(0, 493, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Dash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(HI)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Name)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Namefield, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Pass)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Remember)
-                .addGap(57, 57, 57)
-                .addComponent(Login)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(37, 37, 37))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Dash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void RememberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RememberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RememberActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,20 +284,20 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produce.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produce.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produce.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produce.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new Produce().setVisible(true);
             }
         });
     }
@@ -388,20 +312,13 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Feedback1;
     private javax.swing.JPanel FeedbackPanel;
     private javax.swing.JPanel FeedbackPanel1;
-    private javax.swing.JLabel HI;
     private javax.swing.JLabel Home;
     private javax.swing.JPanel HomePanel;
-    private javax.swing.JButton Login;
-    private javax.swing.JLabel Name;
-    private javax.swing.JTextField Namefield;
-    private javax.swing.JLabel Pass;
     private javax.swing.JLabel Produce;
     private javax.swing.JPanel ProducePanel;
-    private javax.swing.JCheckBox Remember;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
