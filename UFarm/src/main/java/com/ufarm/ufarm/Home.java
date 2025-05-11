@@ -9,14 +9,39 @@ package com.ufarm.ufarm;
  *
  * @author Jasmine
  */
-public class Home extends javax.swing.JFrame {
+public class Home extends    javax.swing.JFrame {
 
     /**
      * Creates new form Homev2
      */
     public Home() {
         initComponents();
+        
+        // Add MouseListener to Acc (JLabel)
+        Acc.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AccMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FeedbackMouseClicked(evt); // Call custom method
+            }
+        });        
     }
+    private void AccMouseClicked(java.awt.event.MouseEvent evt) {
+        new Login().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
+        new Feedback().setVisible(true);  
+        this.dispose();
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

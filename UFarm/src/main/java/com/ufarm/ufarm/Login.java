@@ -3,11 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.ufarm.ufarm;
-
 /**
  *
  * @author Jasmine
  */
+
+import javax.swing.*;
+import java.util.*;
+import java.io.*;
+import java.text.*;
+
+
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -15,8 +21,71 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt); // Call custom method
+            }
+        });             
+
+        Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FeedbackMouseClicked(evt); // Call custom method
+            }
+        });  
+ 
+        Signup.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SignupMouseClicked(evt); // Call custom method
+            }
+        });  
+        
     }
 
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
+        new Home().setVisible(true);  
+        this.dispose();
+    }    
+    
+    private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
+        new Feedback().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void SignupMouseClicked(java.awt.event.MouseEvent evt) {
+        new Signup().setVisible(true);  
+        this.dispose();
+    }
+     
+
+// Modify the Login button's action
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {                                     
+    // Get input values
+    String username = Namefield.getText().trim();
+    String password = new String(jPasswordField1.getPassword());
+    
+    // Validate inputs
+    if (username.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter both username and password", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    // Here you would typically check against a database
+    // For demo purposes, we'll use hardcoded values
+    if (username.equals("admin") && password.equals("password123")) {
+        JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        
+        // Open main application window
+        new Home().setVisible(true);
+        this.dispose();
+    } else {
+        JOptionPane.showMessageDialog(this, "Invalid username or password", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}  
+}  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,7 +102,7 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         Remember = new javax.swing.JCheckBox();
         Login = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Signup = new javax.swing.JLabel();
         Dash = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -82,8 +151,8 @@ public class Login extends javax.swing.JFrame {
         Login.setText("LOG IN");
         Login.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jLabel1.setFont(new java.awt.Font("Georgia", 0, 16)); // NOI18N
-        jLabel1.setText("Don't have an account yet? Sign up.");
+        Signup.setFont(new java.awt.Font("Georgia", 0, 16)); // NOI18N
+        Signup.setText("Don't have an account yet? Sign up.");
 
         Dash.setBackground(new java.awt.Color(35, 101, 51));
 
@@ -290,7 +359,17 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(Dash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+=======
+                        .addGap(143, 143, 143)
+                        .addComponent(Signup))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+>>>>>>> 16f62c1ed74fba71e88de936318cc6855bac7d06
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Name)
                             .addComponent(Namefield, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -328,9 +407,15 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(Remember)
                 .addGap(57, 57, 57)
                 .addComponent(Login)
+<<<<<<< HEAD
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(37, 37, 37))
+=======
+                .addGap(35, 35, 35)
+                .addComponent(Signup)
+                .addGap(29, 29, 29))
+>>>>>>> 16f62c1ed74fba71e88de936318cc6855bac7d06
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Dash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -398,8 +483,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Produce;
     private javax.swing.JPanel ProducePanel;
     private javax.swing.JCheckBox Remember;
+    private javax.swing.JLabel Signup;
     private javax.swing.JLabel Title;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
