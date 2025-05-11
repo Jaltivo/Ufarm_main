@@ -364,10 +364,6 @@ public class Produce extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\search.png")); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\grocery-store.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -398,7 +394,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel10.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Mulberry.jpg")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Mulberry.jpeg")); // NOI18N
 
         jLabel22.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -428,8 +424,6 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Watermelon.jpg")); // NOI18N
-
         jLabel23.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Watermelon");
@@ -457,8 +451,6 @@ public class Produce extends javax.swing.JFrame {
         );
 
         jPanel3.setBackground(new java.awt.Color(35, 101, 51));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Eggplant.jpg")); // NOI18N
 
         jLabel24.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
@@ -488,8 +480,6 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Lemon.jpg")); // NOI18N
-
         jLabel25.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("Lemon");
@@ -517,8 +507,6 @@ public class Produce extends javax.swing.JFrame {
         );
 
         jPanel5.setBackground(new java.awt.Color(35, 101, 51));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Tomato.jpg")); // NOI18N
 
         jLabel26.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
@@ -548,8 +536,6 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Lettuce.jpg")); // NOI18N
-
         jLabel27.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("Lettuce");
@@ -577,8 +563,6 @@ public class Produce extends javax.swing.JFrame {
         );
 
         jPanel7.setBackground(new java.awt.Color(35, 101, 51));
-
-        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Cabagge.jpeg")); // NOI18N
 
         jLabel30.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
@@ -608,8 +592,6 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Garlic.jpg")); // NOI18N
-
         jLabel28.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Garlic");
@@ -637,8 +619,6 @@ public class Produce extends javax.swing.JFrame {
         );
 
         jPanel9.setBackground(new java.awt.Color(35, 101, 51));
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Onion.jpg")); // NOI18N
 
         jLabel29.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
@@ -668,8 +648,6 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel11.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Potato.jpeg")); // NOI18N
-
         jLabel31.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("Potato");
@@ -698,8 +676,6 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel12.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Beans.jpeg")); // NOI18N
-
         jLabel32.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Green Beans");
@@ -727,8 +703,6 @@ public class Produce extends javax.swing.JFrame {
         );
 
         jPanel14.setBackground(new java.awt.Color(35, 101, 51));
-
-        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Broccoli.jpg")); // NOI18N
 
         jLabel33.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
