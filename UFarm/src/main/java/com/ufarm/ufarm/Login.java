@@ -83,7 +83,7 @@ public class Login extends javax.swing.JFrame {
         HI.setText("Hi, please log in. ");
 
         Name.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
-        Name.setText("Name:");
+        Name.setText("Email:");
 
         Namefield.setForeground(new java.awt.Color(35, 101, 51));
         Namefield.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 101, 51), 2, true));
