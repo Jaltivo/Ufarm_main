@@ -28,13 +28,14 @@ public class Signup extends javax.swing.JFrame {
         });
               
     }
+
     
     private void AccMouseClicked(java.awt.event.MouseEvent evt) {
         new Login().setVisible(true);  
         this.dispose();
     }
     
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
