@@ -117,6 +117,8 @@ public class Login extends javax.swing.JFrame {
         FeedbackPanel = new javax.swing.JPanel();
         Feedback = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        FeedbackPanel1 = new javax.swing.JPanel();
+        Feedback1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -181,7 +183,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        AccPanel.setBackground(new java.awt.Color(33, 113, 0));
+        AccPanel.setBackground(new java.awt.Color(102, 51, 0));
 
         Acc.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         Acc.setForeground(new java.awt.Color(255, 255, 255));
@@ -254,16 +256,16 @@ public class Login extends javax.swing.JFrame {
 
         Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         Feedback.setForeground(new java.awt.Color(255, 255, 255));
-        Feedback.setText("Feedback");
+        Feedback.setText("Cart");
 
         javax.swing.GroupLayout FeedbackPanelLayout = new javax.swing.GroupLayout(FeedbackPanel);
         FeedbackPanel.setLayout(FeedbackPanelLayout);
         FeedbackPanelLayout.setHorizontalGroup(
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(FeedbackPanelLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
                 .addComponent(Feedback)
-                .addGap(53, 53, 53))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         FeedbackPanelLayout.setVerticalGroup(
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,6 +278,29 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Agco, Jasmine Jane @2025");
+
+        FeedbackPanel1.setBackground(new java.awt.Color(33, 113, 0));
+
+        Feedback1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Feedback1.setForeground(new java.awt.Color(255, 255, 255));
+        Feedback1.setText("Feedback");
+
+        javax.swing.GroupLayout FeedbackPanel1Layout = new javax.swing.GroupLayout(FeedbackPanel1);
+        FeedbackPanel1.setLayout(FeedbackPanel1Layout);
+        FeedbackPanel1Layout.setHorizontalGroup(
+            FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Feedback1)
+                .addGap(53, 53, 53))
+        );
+        FeedbackPanel1Layout.setVerticalGroup(
+            FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Feedback1)
+                .addGap(157, 157, 157))
+        );
 
         javax.swing.GroupLayout DashLayout = new javax.swing.GroupLayout(Dash);
         Dash.setLayout(DashLayout);
@@ -299,6 +324,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(FeedbackPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         DashLayout.setVerticalGroup(
             DashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,7 +343,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(FarmPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FeedbackPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addContainerGap())
         );
@@ -331,6 +359,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(Dash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+=======
                         .addGap(143, 143, 143)
                         .addComponent(Signup))
                     .addGroup(layout.createSequentialGroup()
@@ -338,16 +369,26 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
+>>>>>>> 16f62c1ed74fba71e88de936318cc6855bac7d06
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Remember)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Pass)
+                            .addComponent(Name)
                             .addComponent(Namefield, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Name)))
+                            .addComponent(Pass)
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Remember))
+                        .addGap(119, 119, 119))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(HI)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(230, 230, 230)
+                                .addComponent(HI))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(288, 288, 288)
+                                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(215, 215, 215)
+                                .addComponent(jLabel1)))
+                        .addContainerGap(918, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,17 +399,23 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(Name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Namefield, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(Pass)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Remember)
-                .addGap(60, 60, 60)
+                .addGap(57, 57, 57)
                 .addComponent(Login)
+<<<<<<< HEAD
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(37, 37, 37))
+=======
                 .addGap(35, 35, 35)
                 .addComponent(Signup)
                 .addGap(29, 29, 29))
+>>>>>>> 16f62c1ed74fba71e88de936318cc6855bac7d06
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Dash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -423,7 +470,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Farm;
     private javax.swing.JPanel FarmPanel;
     private javax.swing.JLabel Feedback;
+    private javax.swing.JLabel Feedback1;
     private javax.swing.JPanel FeedbackPanel;
+    private javax.swing.JPanel FeedbackPanel1;
     private javax.swing.JLabel HI;
     private javax.swing.JLabel Home;
     private javax.swing.JPanel HomePanel;
