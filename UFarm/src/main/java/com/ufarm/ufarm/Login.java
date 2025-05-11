@@ -66,6 +66,7 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }
     
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -411,7 +412,7 @@ public class Login extends javax.swing.JFrame {
         AccountDatabase db = new AccountDatabase();
         if (db.login(email, password)) {
             JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE); 
-            new Home().setVisible(true);  
+            new Produce().setVisible(true);  
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Invalid email or password", "Error", JOptionPane.ERROR_MESSAGE);
