@@ -192,10 +192,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        ProducePanel.setBackground(new java.awt.Color(33, 113, 0));
+        ProducePanel.setBackground(new java.awt.Color(35, 101, 51));
 
+        Produce.setBackground(new java.awt.Color(153, 153, 153));
         Produce.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Produce.setForeground(new java.awt.Color(255, 255, 255));
+        Produce.setForeground(new java.awt.Color(153, 153, 153));
         Produce.setText("Produce");
 
         javax.swing.GroupLayout ProducePanelLayout = new javax.swing.GroupLayout(ProducePanel);
@@ -215,10 +216,10 @@ public class Login extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        FarmPanel.setBackground(new java.awt.Color(33, 113, 0));
+        FarmPanel.setBackground(new java.awt.Color(35, 101, 51));
 
         Farm.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Farm.setForeground(new java.awt.Color(255, 255, 255));
+        Farm.setForeground(new java.awt.Color(153, 153, 153));
         Farm.setText("Farm");
 
         javax.swing.GroupLayout FarmPanelLayout = new javax.swing.GroupLayout(FarmPanel);
@@ -238,10 +239,10 @@ public class Login extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        FeedbackPanel.setBackground(new java.awt.Color(33, 113, 0));
+        FeedbackPanel.setBackground(new java.awt.Color(35, 101, 51));
 
         Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Feedback.setForeground(new java.awt.Color(255, 255, 255));
+        Feedback.setForeground(new java.awt.Color(153, 153, 153));
         Feedback.setText("Cart");
 
         javax.swing.GroupLayout FeedbackPanelLayout = new javax.swing.GroupLayout(FeedbackPanel);
