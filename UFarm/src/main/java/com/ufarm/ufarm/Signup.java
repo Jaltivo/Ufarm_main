@@ -84,6 +84,11 @@ public class Signup extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 50));
 
         Namefield.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(35, 101, 51), 2, true));
+        Namefield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NamefieldActionPerformed(evt);
+            }
+        });
 
         Name.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         Name.setText("Name:");
@@ -246,8 +251,42 @@ public class Signup extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
+        String name = Namefield.getText().trim();
+        String email = Emailfield.getText().trim();
+        String password = new String(jPasswordField1.getPassword());
+        String confirmPassword = new String(ConPasswordField2.getPassword());
+    
+        // Validate inputs
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all fields", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            JOptionPane.showMessageDialog(this, "Passwords do not match", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (password.length() < 6) {
+            JOptionPane.showMessageDialog(this, "Password must be at least 6 characters", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Here you would typically save the user data to a database
+        // For now, we'll just show a success message
+        JOptionPane.showMessageDialog(this, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+        // Open login screen
+        new Login().setVisible(true);
+        this.dispose();                        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    
+    private void NamefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamefieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NamefieldActionPerformed
 
     /**
      * @param args the command line arguments
