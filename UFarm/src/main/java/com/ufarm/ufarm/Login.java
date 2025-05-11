@@ -54,6 +54,22 @@ public class Login extends javax.swing.JFrame {
         Remember = new javax.swing.JCheckBox();
         Login = new javax.swing.JButton();
         GoToSignup = new javax.swing.JLabel();
+        Dash = new javax.swing.JPanel();
+        Title = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        HomePanel = new javax.swing.JPanel();
+        Home = new javax.swing.JLabel();
+        AccPanel = new javax.swing.JPanel();
+        Acc = new javax.swing.JLabel();
+        ProducePanel = new javax.swing.JPanel();
+        Produce = new javax.swing.JLabel();
+        FarmPanel = new javax.swing.JPanel();
+        Farm = new javax.swing.JLabel();
+        FeedbackPanel = new javax.swing.JPanel();
+        Feedback = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        FeedbackPanel1 = new javax.swing.JPanel();
+        Feedback1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,54 +105,255 @@ public class Login extends javax.swing.JFrame {
         GoToSignup.setFont(new java.awt.Font("Georgia", 0, 16)); // NOI18N
         GoToSignup.setText("Don't have an account yet? Sign up.");
 
+        Dash.setBackground(new java.awt.Color(35, 101, 51));
+
+        Title.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
+        Title.setForeground(new java.awt.Color(255, 255, 255));
+        Title.setText("UFarm");
+
+        HomePanel.setBackground(new java.awt.Color(33, 113, 0));
+
+        Home.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Home.setForeground(new java.awt.Color(255, 255, 255));
+        Home.setText("Home");
+
+        javax.swing.GroupLayout HomePanelLayout = new javax.swing.GroupLayout(HomePanel);
+        HomePanel.setLayout(HomePanelLayout);
+        HomePanelLayout.setHorizontalGroup(
+            HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HomePanelLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(Home)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        HomePanelLayout.setVerticalGroup(
+            HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Home)
+                .addGap(157, 157, 157))
+        );
+
+        AccPanel.setBackground(new java.awt.Color(102, 51, 0));
+
+        Acc.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        Acc.setForeground(new java.awt.Color(255, 255, 255));
+        Acc.setText("Account");
+
+        javax.swing.GroupLayout AccPanelLayout = new javax.swing.GroupLayout(AccPanel);
+        AccPanel.setLayout(AccPanelLayout);
+        AccPanelLayout.setHorizontalGroup(
+            AccPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AccPanelLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(Acc)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        AccPanelLayout.setVerticalGroup(
+            AccPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AccPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Acc)
+                .addGap(157, 157, 157))
+        );
+
+        ProducePanel.setBackground(new java.awt.Color(33, 113, 0));
+
+        Produce.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Produce.setForeground(new java.awt.Color(255, 255, 255));
+        Produce.setText("Produce");
+
+        javax.swing.GroupLayout ProducePanelLayout = new javax.swing.GroupLayout(ProducePanel);
+        ProducePanel.setLayout(ProducePanelLayout);
+        ProducePanelLayout.setHorizontalGroup(
+            ProducePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProducePanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(Produce)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ProducePanelLayout.setVerticalGroup(
+            ProducePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProducePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Produce)
+                .addGap(157, 157, 157))
+        );
+
+        FarmPanel.setBackground(new java.awt.Color(33, 113, 0));
+
+        Farm.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Farm.setForeground(new java.awt.Color(255, 255, 255));
+        Farm.setText("Farm");
+
+        javax.swing.GroupLayout FarmPanelLayout = new javax.swing.GroupLayout(FarmPanel);
+        FarmPanel.setLayout(FarmPanelLayout);
+        FarmPanelLayout.setHorizontalGroup(
+            FarmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FarmPanelLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(Farm)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        FarmPanelLayout.setVerticalGroup(
+            FarmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FarmPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Farm)
+                .addGap(157, 157, 157))
+        );
+
+        FeedbackPanel.setBackground(new java.awt.Color(33, 113, 0));
+
+        Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Feedback.setForeground(new java.awt.Color(255, 255, 255));
+        Feedback.setText("Cart");
+
+        javax.swing.GroupLayout FeedbackPanelLayout = new javax.swing.GroupLayout(FeedbackPanel);
+        FeedbackPanel.setLayout(FeedbackPanelLayout);
+        FeedbackPanelLayout.setHorizontalGroup(
+            FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FeedbackPanelLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(Feedback)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        FeedbackPanelLayout.setVerticalGroup(
+            FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FeedbackPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Feedback)
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("Agco, Jasmine Jane @2025");
+
+        FeedbackPanel1.setBackground(new java.awt.Color(33, 113, 0));
+
+        Feedback1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Feedback1.setForeground(new java.awt.Color(255, 255, 255));
+        Feedback1.setText("Feedback");
+
+        javax.swing.GroupLayout FeedbackPanel1Layout = new javax.swing.GroupLayout(FeedbackPanel1);
+        FeedbackPanel1.setLayout(FeedbackPanel1Layout);
+        FeedbackPanel1Layout.setHorizontalGroup(
+            FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Feedback1)
+                .addGap(52, 52, 52))
+        );
+        FeedbackPanel1Layout.setVerticalGroup(
+            FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Feedback1)
+                .addGap(157, 157, 157))
+        );
+
+        javax.swing.GroupLayout DashLayout = new javax.swing.GroupLayout(Dash);
+        Dash.setLayout(DashLayout);
+        DashLayout.setHorizontalGroup(
+            DashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(HomePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(AccPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ProducePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(FarmPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(FeedbackPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(DashLayout.createSequentialGroup()
+                .addGroup(DashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DashLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(DashLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(Title)))
+                .addGap(0, 27, Short.MAX_VALUE))
+            .addGroup(DashLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(FeedbackPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        DashLayout.setVerticalGroup(
+            DashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DashLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(Title)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(HomePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AccPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ProducePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FarmPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FeedbackPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 41, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(Dash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(HI))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(215, 215, 215)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Namefield, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(278, 278, 278)
+                                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(217, 217, 217)
+                                .addComponent(HI))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(197, 197, 197)
+                                .addComponent(GoToSignup)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Name)
+                            .addComponent(Namefield, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Pass)
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Remember))))
-                .addGap(0, 110, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(GoToSignup))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(315, 315, 315)
-                        .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Remember))
+                        .addContainerGap(146, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(48, 48, 48)
                 .addComponent(HI)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGap(51, 51, 51)
                 .addComponent(Name)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Namefield, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Pass)
-                .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Remember)
-                .addGap(52, 52, 52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Login)
-                .addGap(29, 29, 29)
+                .addGap(35, 35, 35)
                 .addComponent(GoToSignup)
-                .addGap(30, 30, 30))
+                .addGap(55, 55, 55))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Dash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,13 +399,29 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Acc;
+    private javax.swing.JPanel AccPanel;
+    private javax.swing.JPanel Dash;
+    private javax.swing.JLabel Farm;
+    private javax.swing.JPanel FarmPanel;
+    private javax.swing.JLabel Feedback;
+    private javax.swing.JLabel Feedback1;
+    private javax.swing.JPanel FeedbackPanel;
+    private javax.swing.JPanel FeedbackPanel1;
     private javax.swing.JLabel GoToSignup;
     private javax.swing.JLabel HI;
+    private javax.swing.JLabel Home;
+    private javax.swing.JPanel HomePanel;
     private javax.swing.JButton Login;
     private javax.swing.JLabel Name;
     private javax.swing.JTextField Namefield;
     private javax.swing.JLabel Pass;
+    private javax.swing.JLabel Produce;
+    private javax.swing.JPanel ProducePanel;
     private javax.swing.JCheckBox Remember;
+    private javax.swing.JLabel Title;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
