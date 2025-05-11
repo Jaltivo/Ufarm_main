@@ -43,11 +43,11 @@ public class Login extends javax.swing.JFrame {
             }
         });  
         
-        Login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
-            }
-        });
+        // Login.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //        LoginActionPerformed(evt);
+        //    }
+        //});
         
     }
     
