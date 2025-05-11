@@ -384,10 +384,7 @@ public class Login extends javax.swing.JFrame {
         
         AccountDatabase db = new AccountDatabase();
         if (db.login(email, password)) {
-            JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            // Open main application window here
-            // new MainApplication().setVisible(true);
-            // this.dispose();
+            JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE); 
             new Home().setVisible(true);  
             this.dispose();
         } else {
