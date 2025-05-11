@@ -34,7 +34,7 @@
                           <Component id="jPanel7" alignment="0" max="32767" attributes="0"/>
                           <Component id="jPanel10" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="33" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jPanel2" max="32767" attributes="0"/>
                           <Component id="jPanel6" max="32767" attributes="0"/>
@@ -501,7 +501,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/search (1).png"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/search (1).png"/>
             </Property>
           </Properties>
         </Component>
@@ -659,7 +659,7 @@
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/Eggplant (4).jpg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Eggplant.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -713,7 +713,7 @@
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/Lemon (1).jpg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Lemon.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -767,7 +767,7 @@
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/Tomato (2).jpg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Tomato.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -821,7 +821,7 @@
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/Lettuce (2).jpg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Lettuce.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -875,7 +875,7 @@
         <Component class="javax.swing.JLabel" name="jLabel18">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/cabagge (1).jpeg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Cabagge.jpeg"/>
             </Property>
           </Properties>
         </Component>
@@ -929,7 +929,7 @@
         <Component class="javax.swing.JLabel" name="jLabel16">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/garlic (2).jpg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Garlic.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -983,7 +983,7 @@
         <Component class="javax.swing.JLabel" name="jLabel17">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/onion (2).jpg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Onion.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -1037,7 +1037,7 @@
         <Component class="javax.swing.JLabel" name="jLabel19">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/potato (1).jpeg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Potato.jpeg"/>
             </Property>
           </Properties>
         </Component>
@@ -1091,7 +1091,7 @@
         <Component class="javax.swing.JLabel" name="jLabel20">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/beans (1).jpeg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Beans.jpeg"/>
             </Property>
           </Properties>
         </Component>
@@ -1145,7 +1145,7 @@
         <Component class="javax.swing.JLabel" name="jLabel21">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/ufarm/ufarm/broccoli (2).jpg"/>
+              <Image iconType="3" name="/com/ufarm/ufarm/images/Broccoli.jpg"/>
             </Property>
           </Properties>
         </Component>

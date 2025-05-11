@@ -340,7 +340,7 @@ public class Produce extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/search (1).png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/search (1).png"))); // NOI18N
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/grocery-store (1).png"))); // NOI18N
 
@@ -434,7 +434,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/Eggplant (4).jpg"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Eggplant.jpg"))); // NOI18N
 
         jLabel24.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
@@ -464,7 +464,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/Lemon (1).jpg"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Lemon.jpg"))); // NOI18N
 
         jLabel25.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
@@ -494,7 +494,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/Tomato (2).jpg"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Tomato.jpg"))); // NOI18N
 
         jLabel26.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
@@ -524,7 +524,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/Lettuce (2).jpg"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Lettuce.jpg"))); // NOI18N
 
         jLabel27.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
@@ -554,7 +554,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/cabagge (1).jpeg"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Cabagge.jpeg"))); // NOI18N
 
         jLabel30.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
@@ -584,7 +584,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/garlic (2).jpg"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Garlic.jpg"))); // NOI18N
 
         jLabel28.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
@@ -614,7 +614,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/onion (2).jpg"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Onion.jpg"))); // NOI18N
 
         jLabel29.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
@@ -644,7 +644,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel11.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/potato (1).jpeg"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Potato.jpeg"))); // NOI18N
 
         jLabel31.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
@@ -674,7 +674,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel12.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/beans (1).jpeg"))); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Beans.jpeg"))); // NOI18N
 
         jLabel32.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
@@ -704,7 +704,7 @@ public class Produce extends javax.swing.JFrame {
 
         jPanel14.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/broccoli (2).jpg"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Broccoli.jpg"))); // NOI18N
 
         jLabel33.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
@@ -798,7 +798,7 @@ public class Produce extends javax.swing.JFrame {
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
