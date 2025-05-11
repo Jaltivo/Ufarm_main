@@ -152,7 +152,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         Acc.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         Acc.setForeground(new java.awt.Color(255, 255, 255));
-        Acc.setText("Account");
+        Acc.setText("Logout");
 
         javax.swing.GroupLayout AccPanelLayout = new javax.swing.GroupLayout(AccPanel);
         AccPanel.setLayout(AccPanelLayout);
@@ -317,7 +317,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel2.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(35, 101, 51));
         jLabel2.setText("Available Produce");
 
@@ -339,7 +339,7 @@ public class Produce2 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
