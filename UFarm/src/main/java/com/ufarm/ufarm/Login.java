@@ -46,7 +46,6 @@ public class Login extends javax.swing.JFrame {
         setupLabelHoverEffect(Feedback, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));  
                       
         setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(50, 140, 0));
-        setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(50, 140, 0));
         setupPanelHoverEffects(FeedbackPanel, new Color(33, 113, 0), new Color(50, 140, 0));
         
     }

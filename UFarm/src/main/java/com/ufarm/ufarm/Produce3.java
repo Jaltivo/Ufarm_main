@@ -59,7 +59,6 @@ public class Produce3 extends javax.swing.JFrame {
         
         setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(50, 140, 0));
         setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(50, 140, 0));
-        setupPanelHoverEffects(ProducePanel, new Color(102, 51, 0), new Color(120, 60, 0));
         setupPanelHoverEffects(FarmPanel, new Color(33, 113, 0), new Color(50, 140, 0));
         
         Color productNormalColor = new Color(35, 101, 51);

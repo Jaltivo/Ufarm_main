@@ -40,7 +40,6 @@ public class Feedback extends javax.swing.JFrame {
                       
         setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(50, 140, 0));
         setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(50, 140, 0));
-        setupPanelHoverEffects(FeedbackPanel, new Color(33, 113, 0), new Color(50, 140, 0));
         
     }
     
