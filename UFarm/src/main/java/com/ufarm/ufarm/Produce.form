@@ -28,11 +28,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="284" max="-2" attributes="0"/>
-                      <Component id="jPanel18" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
@@ -49,6 +44,11 @@
                           <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jPanel18" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -482,14 +482,22 @@
         <Component class="javax.swing.JLabel" name="Search">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\search.png"/>
+=======
+              <Image iconType="2" name="/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/search.png"/>
+>>>>>>> a894496baadb0b0db3c40b1db4b81e65d27db700
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Cart">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\grocery-store.png"/>
+=======
+              <Image iconType="2" name="/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/grocery-store.png"/>
+>>>>>>> a894496baadb0b0db3c40b1db4b81e65d27db700
             </Property>
           </Properties>
         </Component>
@@ -667,7 +675,11 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\Garlic.jpg"/>
+=======
+              <Image iconType="2" name="/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Garlic.jpg"/>
+>>>>>>> a894496baadb0b0db3c40b1db4b81e65d27db700
             </Property>
           </Properties>
         </Component>
@@ -752,7 +764,11 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\Tomato.jpg"/>
+=======
+              <Image iconType="2" name="/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Tomato.jpg"/>
+>>>>>>> a894496baadb0b0db3c40b1db4b81e65d27db700
             </Property>
           </Properties>
         </Component>
@@ -837,7 +853,11 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\Eggplant.jpeg"/>
+=======
+              <Image iconType="2" name="/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Eggplant.jpeg"/>
+>>>>>>> a894496baadb0b0db3c40b1db4b81e65d27db700
             </Property>
           </Properties>
         </Component>
@@ -922,7 +942,11 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\Cabbage.jpeg"/>
+=======
+              <Image iconType="2" name="/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Cabbage.jpeg"/>
+>>>>>>> a894496baadb0b0db3c40b1db4b81e65d27db700
             </Property>
           </Properties>
         </Component>
@@ -1014,7 +1038,11 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\Lettuce.jpeg"/>
+=======
+              <Image iconType="2" name="/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Lettuce.jpeg"/>
+>>>>>>> a894496baadb0b0db3c40b1db4b81e65d27db700
             </Property>
           </Properties>
         </Component>
@@ -1099,7 +1127,11 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\Potato.jpeg"/>
+=======
+              <Image iconType="2" name="/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Potato.jpeg"/>
+>>>>>>> a894496baadb0b0db3c40b1db4b81e65d27db700
             </Property>
           </Properties>
         </Component>
