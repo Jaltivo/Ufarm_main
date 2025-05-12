@@ -66,6 +66,20 @@ public class Produce extends javax.swing.JFrame {
             }
         });
         
+        setupLabelHoverEffect(Home, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150)); // Normal white, hover light yellow
+        setupLabelHoverEffect(Acc, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Produce, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Farm, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(CartMenu, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Feedback1, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+
+        // Set up hover effects for pagination labels
+        setupLabelHoverEffect(Prev, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Next, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Page2, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Page3, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+       
+        
         
         setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(50, 140, 0));
         setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(50, 140, 0));
@@ -128,7 +142,7 @@ public class Produce extends javax.swing.JFrame {
         });
     }
         
-    private void setupLabelHoverEffects(javax.swing.JLabel label, Color normalColor, Color hoverColor) {
+    private void setupLabelHoverEffect(javax.swing.JLabel label, Color normalColor, Color hoverColor) {
         label.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
