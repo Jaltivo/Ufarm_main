@@ -552,7 +552,7 @@ public class Farm3 extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("SpaceCrop Farms");
+        jLabel11.setText("SpaceCrop Farm");
 
         jButton15.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton15.setForeground(new java.awt.Color(35, 101, 51));
