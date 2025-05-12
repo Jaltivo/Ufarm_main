@@ -4,21 +4,11 @@
  */
 package com.ufarm.ufarm;
 
-/**
- *
- * @author Jasmine
- */
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
 
-import java.awt.Component;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerNumberModel;
+
 
 public class Cart extends javax.swing.JFrame {
     
@@ -43,22 +33,14 @@ public class Cart extends javax.swing.JFrame {
     
     public Cart() {
         initComponents();
-        // Get cart items from Produce class
-        //this.cartItems = Produce.getCartItems();
-        //this.cartItems = com.ufarm.ufarm.Produce.getCartItems();
-        //displayCartItems();
-        //calculateOrderSummary();
-        //setupNavigation();
-        
         try {
-            this.cartItems =  com.ufarm.ufarm.Produce.getCartItems();
+            this.cartItems = com.ufarm.ufarm.Produce.getCartItems();
         } catch (Exception e) {
             this.cartItems = new ArrayList<>();
         }
         displayCartItems();
         calculateOrderSummary();
         setupNavigation();
-        
     }
     
     private void setupNavigation() {
@@ -105,12 +87,22 @@ public class Cart extends javax.swing.JFrame {
 
     private void displayCartItems() {
         JPanel itemsPanel = new JPanel();
-        itemsPanel.setLayout(new java.awt.GridLayout(0, 1, 5, 5));
+        itemsPanel.setLayout(new BoxLayout(itemsPanel, BoxLayout.Y_AXIS));
+        itemsPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         
         if (cartItems == null || cartItems.isEmpty()) {
-        JLabel emptyLabel = new JLabel("Your cart is empty");
-        emptyLabel.setHorizontalAlignment(JLabel.CENTER);
-        itemsPanel.add(emptyLabel);
+            JPanel emptyPanel = new JPanel(new BorderLayout());
+            JLabel emptyLabel = new JLabel("Your cart is empty");
+            emptyLabel.setFont(new Font("Helvetica Neue", Font.BOLD, 16));
+            emptyLabel.setForeground(new Color(35, 101, 51));
+            emptyLabel.setHorizontalAlignment(JLabel.CENTER);
+            emptyPanel.add(emptyLabel, BorderLayout.CENTER);
+            
+            // Add some vertical space
+            emptyPanel.add(Box.createVerticalStrut(50), BorderLayout.NORTH);
+            emptyPanel.add(Box.createVerticalStrut(50), BorderLayout.SOUTH);
+            
+            itemsPanel.add(emptyPanel);
         } else {
             for (Map<String, Object> item : cartItems) {
                 try {
@@ -121,70 +113,105 @@ public class Cart extends javax.swing.JFrame {
                         (Double) item.get("price")
                     );
                     itemsPanel.add(itemPanel);
+                    itemsPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Add spacing between items
                 } catch (Exception e) {
                     System.err.println("Error displaying cart item: " + e.getMessage());
                 }
             }
+        }
         
         // Clear the existing panel and add scroll pane
         jPanel3.removeAll();
         jScrollPane1.setViewportView(itemsPanel);
+        jScrollPane1.setBorder(null); // Remove default border
         jPanel3.add(jScrollPane1);
         jPanel3.revalidate();
         jPanel3.repaint();
-        }
     }
     
     private JPanel createCartItemPanel(String name, int quantity, ImageIcon icon, double price) {
         JPanel panel = new JPanel();
-        panel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 10));
-        panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panel.setLayout(new BorderLayout(15, 0));
+        panel.setBorder(BorderFactory.createCompoundBorder(
+            BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(200, 200, 200)),
+            BorderFactory.createEmptyBorder(10, 10, 10, 10))
+        );
+        panel.setBackground(Color.WHITE);
         
-        // Item image - use safe loading
+        // Left side - Image
         JLabel imageLabel = new JLabel();
+        imageLabel.setPreferredSize(new Dimension(80, 80));
         if (icon != null && icon.getImage() != null) {
-            imageLabel.setIcon(icon);
+            // Scale the image to fit
+            Image scaledImage = icon.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+            imageLabel.setIcon(new ImageIcon(scaledImage));
         } else {
-            // Load a default image or placeholder if original is null
             imageLabel.setIcon(loadImageIcon("/com/ufarm/ufarm/images/default_product.png"));
         }
-        panel.add(imageLabel);
+        imageLabel.setHorizontalAlignment(JLabel.CENTER);
+        panel.add(imageLabel, BorderLayout.WEST);
         
-        // Item name and price
+        // Center - Info
         JPanel infoPanel = new JPanel();
-        infoPanel.setLayout(new java.awt.GridLayout(2, 1));
+        infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
+        infoPanel.setBackground(Color.WHITE);
         
         JLabel nameLabel = new JLabel(name);
-        nameLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 14));
+        nameLabel.setFont(new Font("Helvetica Neue", Font.BOLD, 16));
+        nameLabel.setForeground(new Color(35, 101, 51));
         
         JLabel priceLabel = new JLabel(String.format("$%.2f each", price));
-        priceLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 12));
+        priceLabel.setFont(new Font("Helvetica Neue", Font.PLAIN, 14));
         
         infoPanel.add(nameLabel);
+        infoPanel.add(Box.createRigidArea(new Dimension(0, 5))); // Spacing
         infoPanel.add(priceLabel);
-        panel.add(infoPanel);
         
-        // Quantity spinner
+        // Right side - Quantity and controls
+        JPanel controlPanel = new JPanel();
+        controlPanel.setLayout(new BoxLayout(controlPanel, BoxLayout.Y_AXIS));
+        controlPanel.setBackground(Color.WHITE);
+        
+        // Quantity spinner with better styling
         JSpinner quantitySpinner = new JSpinner(new SpinnerNumberModel(quantity, 1, 100, 1));
+        JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) quantitySpinner.getEditor();
+        editor.getTextField().setColumns(3);
+        editor.getTextField().setFont(new Font("Helvetica Neue", Font.PLAIN, 14));
         quantitySpinner.addChangeListener(evt -> {
             int newQuantity = (Integer) quantitySpinner.getValue();
             updateItemQuantity(name, newQuantity);
         });
-        panel.add(quantitySpinner);
         
-        // Total price for this item
         JLabel totalLabel = new JLabel(String.format("$%.2f", price * quantity));
-        totalLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 14));
-        panel.add(totalLabel);
+        totalLabel.setFont(new Font("Helvetica Neue", Font.BOLD, 16));
+        totalLabel.setForeground(new Color(35, 101, 51));
         
-        // Remove button
-        javax.swing.JButton removeButton = new javax.swing.JButton("Remove");
+        JButton removeButton = new javax.swing.JButton("Remove");
+        removeButton.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
+        removeButton.setBackground(new Color(220, 53, 69)); // Bootstrap danger color
+        removeButton.setForeground(Color.WHITE);
+        removeButton.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         removeButton.addActionListener(evt -> {
             cartItems.removeIf(item -> item.get("name").equals(name));
             displayCartItems();
             calculateOrderSummary();
         });
-        panel.add(removeButton);
+        
+        // Align controls to the right
+        JPanel quantityPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 0, 0));
+        quantityPanel.setBackground(Color.WHITE);
+        quantityPanel.add(new JLabel("Qty: "));
+        quantityPanel.add(quantitySpinner);
+        
+        controlPanel.add(totalLabel);
+        controlPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Spacing
+        controlPanel.add(quantityPanel);
+        controlPanel.add(Box.createRigidArea(new Dimension(0, 10))); // Spacing
+        controlPanel.add(removeButton);
+        
+        // Add all components to main panel
+        panel.add(infoPanel, BorderLayout.CENTER);
+        panel.add(controlPanel, BorderLayout.EAST);
         
         return panel;
     }
@@ -207,9 +234,22 @@ public class Cart extends javax.swing.JFrame {
         
         double total = subtotal + DELIVERY_FEE;
         
+        // Update labels with better styling
+        jLabel5.setFont(new Font("Helvetica Neue", Font.PLAIN, 14));
         jLabel5.setText(String.format("$%.2f", subtotal));
+        
+        jLabel6.setFont(new Font("Helvetica Neue", Font.PLAIN, 14));
         jLabel6.setText(String.format("$%.2f", DELIVERY_FEE));
+        
+        jLabel7.setFont(new Font("Helvetica Neue", Font.BOLD, 18));
+        jLabel7.setForeground(new Color(35, 101, 51));
         jLabel7.setText(String.format("$%.2f", total));
+        
+        // Style the place order button
+        jButton1.setBackground(new Color(35, 101, 51));
+        jButton1.setForeground(Color.WHITE);
+        jButton1.setFont(new Font("Helvetica Neue", Font.BOLD, 16));
+        jButton1.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
     }
 
     @SuppressWarnings("unchecked")
@@ -557,21 +597,27 @@ public class Cart extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        jScrollPane1.setBorder(null);
+        jScrollPane1.getViewport().setBackground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(255, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
