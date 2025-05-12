@@ -8,6 +8,14 @@ package com.ufarm.ufarm;
  *
  * @author Jasmine
  */
+
+import java.awt.*;
+import javax.swing.*;
+import java.util.*;
+import java.io.*;
+import java.text.*;
+
+
 public class Produce extends javax.swing.JFrame {
 
     /**
@@ -58,6 +66,26 @@ public class Produce extends javax.swing.JFrame {
             }
         });
         
+        setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(50, 140, 0));
+        setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(50, 140, 0));
+        setupPanelHoverEffects(ProducePanel, new Color(102, 51, 0), new Color(120, 60, 0));
+        setupPanelHoverEffects(FarmPanel, new Color(33, 113, 0), new Color(50, 140, 0));
+        
+        Color productNormalColor = new Color(35, 101, 51);
+        Color productHoverColor = new Color(50, 130, 70);
+        setupPanelHoverEffects(jPanel10, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel2, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel3, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel4, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel5, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel6, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel7, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel8, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel9, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel11, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel12, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel14, productNormalColor, productHoverColor);
+        
     }
 
     
@@ -91,6 +119,22 @@ public class Produce extends javax.swing.JFrame {
         this.dispose();
     }
     
+    private void setupPanelHoverEffects(JPanel panel, Color normalColor, Color hoverColor) {
+        panel.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panel.setBackground(hoverColor);
+                panel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panel.setBackground(normalColor);
+                panel.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+        });
+    }
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -112,8 +156,8 @@ public class Produce extends javax.swing.JFrame {
         Produce = new javax.swing.JLabel();
         FarmPanel = new javax.swing.JPanel();
         Farm = new javax.swing.JLabel();
-        FeedbackPanel = new javax.swing.JPanel();
-        Feedback = new javax.swing.JLabel();
+        CartPanel = new javax.swing.JPanel();
+        CartMenu = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         FeedbackPanel1 = new javax.swing.JPanel();
         Feedback1 = new javax.swing.JLabel();
@@ -265,26 +309,26 @@ public class Produce extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        FeedbackPanel.setBackground(new java.awt.Color(33, 113, 0));
+        CartPanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Feedback.setForeground(new java.awt.Color(255, 255, 255));
-        Feedback.setText("Cart");
+        CartMenu.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        CartMenu.setForeground(new java.awt.Color(255, 255, 255));
+        CartMenu.setText("Cart");
 
-        javax.swing.GroupLayout FeedbackPanelLayout = new javax.swing.GroupLayout(FeedbackPanel);
-        FeedbackPanel.setLayout(FeedbackPanelLayout);
-        FeedbackPanelLayout.setHorizontalGroup(
-            FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FeedbackPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout CartPanelLayout = new javax.swing.GroupLayout(CartPanel);
+        CartPanel.setLayout(CartPanelLayout);
+        CartPanelLayout.setHorizontalGroup(
+            CartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CartPanelLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addComponent(Feedback)
+                .addComponent(CartMenu)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        FeedbackPanelLayout.setVerticalGroup(
-            FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanelLayout.createSequentialGroup()
+        CartPanelLayout.setVerticalGroup(
+            CartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CartPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Feedback)
+                .addComponent(CartMenu)
                 .addGap(157, 157, 157))
         );
 
@@ -323,7 +367,7 @@ public class Produce extends javax.swing.JFrame {
             .addComponent(AccPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ProducePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(FarmPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(FeedbackPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CartPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(DashLayout.createSequentialGroup()
                 .addGroup(DashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DashLayout.createSequentialGroup()
@@ -355,7 +399,7 @@ public class Produce extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FarmPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FeedbackPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -933,12 +977,12 @@ public class Produce extends javax.swing.JFrame {
     private javax.swing.JLabel Acc;
     private javax.swing.JPanel AccPanel;
     private javax.swing.JLabel Cart;
+    private javax.swing.JLabel CartMenu;
+    private javax.swing.JPanel CartPanel;
     private javax.swing.JPanel Dash;
     private javax.swing.JLabel Farm;
     private javax.swing.JPanel FarmPanel;
-    private javax.swing.JLabel Feedback;
     private javax.swing.JLabel Feedback1;
-    private javax.swing.JPanel FeedbackPanel;
     private javax.swing.JPanel FeedbackPanel1;
     private javax.swing.JLabel Home;
     private javax.swing.JPanel HomePanel;

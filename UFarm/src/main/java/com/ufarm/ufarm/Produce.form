@@ -118,7 +118,7 @@
               <Component id="AccPanel" alignment="0" max="32767" attributes="0"/>
               <Component id="ProducePanel" alignment="0" max="32767" attributes="0"/>
               <Component id="FarmPanel" alignment="0" max="32767" attributes="0"/>
-              <Component id="FeedbackPanel" alignment="0" max="32767" attributes="0"/>
+              <Component id="CartPanel" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -156,7 +156,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="FarmPanel" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="FeedbackPanel" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="CartPanel" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="FeedbackPanel1" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -344,7 +344,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="FeedbackPanel">
+        <Container class="javax.swing.JPanel" name="CartPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="71" red="21" type="rgb"/>
@@ -356,7 +356,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                      <Component id="Feedback" min="-2" max="-2" attributes="0"/>
+                      <Component id="CartMenu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -365,14 +365,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="Feedback" min="-2" max="-2" attributes="0"/>
+                      <Component id="CartMenu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="Feedback">
+            <Component class="javax.swing.JLabel" name="CartMenu">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Helvetica Neue" size="24" style="0"/>
