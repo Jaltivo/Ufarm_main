@@ -46,7 +46,7 @@ public class Produce2 extends javax.swing.JFrame {
     }
     
     private void Page1MouseClicked(java.awt.event.MouseEvent evt) {
-        new Produce2().setVisible(true);  
+        new Produce().setVisible(true);  
         this.dispose();
     }
     
