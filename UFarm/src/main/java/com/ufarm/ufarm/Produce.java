@@ -66,6 +66,7 @@ public class Produce extends javax.swing.JFrame {
             }
         });
         
+        
         setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(50, 140, 0));
         setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(50, 140, 0));
         setupPanelHoverEffects(ProducePanel, new Color(102, 51, 0), new Color(120, 60, 0));
@@ -73,18 +74,11 @@ public class Produce extends javax.swing.JFrame {
         
         Color productNormalColor = new Color(35, 101, 51);
         Color productHoverColor = new Color(50, 130, 70);
-        setupPanelHoverEffects(jPanel10, productNormalColor, productHoverColor);
         setupPanelHoverEffects(jPanel2, productNormalColor, productHoverColor);
         setupPanelHoverEffects(jPanel3, productNormalColor, productHoverColor);
         setupPanelHoverEffects(jPanel4, productNormalColor, productHoverColor);
         setupPanelHoverEffects(jPanel5, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel6, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel7, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel8, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel9, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel11, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel12, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel14, productNormalColor, productHoverColor);
+
         
     }
 
@@ -133,6 +127,24 @@ public class Produce extends javax.swing.JFrame {
             }
         });
     }
+        
+    private void setupLabelHoverEffects(javax.swing.JLabel label, Color normalColor, Color hoverColor) {
+        label.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                label.setForeground(hoverColor);
+                label.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                label.setForeground(normalColor);
+                label.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+        });
+    }
+    
+   
+    
     
     
     
