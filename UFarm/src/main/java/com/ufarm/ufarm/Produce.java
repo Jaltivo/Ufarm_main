@@ -23,6 +23,7 @@ public class Produce extends javax.swing.JFrame {
     /**
      * Creates new form Produce
      */
+    new CartFrame(cartItems).setVisible(true);
     public Produce() {
         initComponents();
         
@@ -182,6 +183,7 @@ public class Produce extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Your cart is empty!", "Cart", JOptionPane.INFORMATION_MESSAGE);
         } else {
             new CartFrame(cartItems).setVisible(true);
+            //new Cart(cartItems).setVisible(true);
         }
     }
     
