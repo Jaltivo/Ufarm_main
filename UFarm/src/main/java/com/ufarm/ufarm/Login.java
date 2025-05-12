@@ -36,7 +36,7 @@ public class Login extends javax.swing.JFrame {
             }
         });  
         
-        Feedback1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FeedbackMouseClicked(evt); // Call custom method
@@ -96,11 +96,11 @@ public class Login extends javax.swing.JFrame {
         Produce = new javax.swing.JLabel();
         FarmPanel = new javax.swing.JPanel();
         Farm = new javax.swing.JLabel();
+        CartPanel = new javax.swing.JPanel();
+        CartMenu = new javax.swing.JLabel();
+        MyLove = new javax.swing.JLabel();
         FeedbackPanel = new javax.swing.JPanel();
         Feedback = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        FeedbackPanel1 = new javax.swing.JPanel();
-        Feedback1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -240,53 +240,53 @@ public class Login extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        FeedbackPanel.setBackground(new java.awt.Color(35, 101, 51));
+        CartPanel.setBackground(new java.awt.Color(35, 101, 51));
+
+        CartMenu.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        CartMenu.setForeground(new java.awt.Color(153, 153, 153));
+        CartMenu.setText("Cart");
+
+        javax.swing.GroupLayout CartPanelLayout = new javax.swing.GroupLayout(CartPanel);
+        CartPanel.setLayout(CartPanelLayout);
+        CartPanelLayout.setHorizontalGroup(
+            CartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CartPanelLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(CartMenu)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        CartPanelLayout.setVerticalGroup(
+            CartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CartPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(CartMenu)
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+
+        MyLove.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        MyLove.setForeground(new java.awt.Color(204, 204, 204));
+        MyLove.setText("Agco, Jasmine Jane @2025");
+
+        FeedbackPanel.setBackground(new java.awt.Color(33, 113, 0));
 
         Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Feedback.setForeground(new java.awt.Color(153, 153, 153));
-        Feedback.setText("Cart");
+        Feedback.setForeground(new java.awt.Color(255, 255, 255));
+        Feedback.setText("Feedback");
 
         javax.swing.GroupLayout FeedbackPanelLayout = new javax.swing.GroupLayout(FeedbackPanel);
         FeedbackPanel.setLayout(FeedbackPanelLayout);
         FeedbackPanelLayout.setHorizontalGroup(
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FeedbackPanelLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Feedback)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(52, 52, 52))
         );
         FeedbackPanelLayout.setVerticalGroup(
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FeedbackPanelLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Feedback)
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
-
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Agco, Jasmine Jane @2025");
-
-        FeedbackPanel1.setBackground(new java.awt.Color(33, 113, 0));
-
-        Feedback1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Feedback1.setForeground(new java.awt.Color(255, 255, 255));
-        Feedback1.setText("Feedback");
-
-        javax.swing.GroupLayout FeedbackPanel1Layout = new javax.swing.GroupLayout(FeedbackPanel1);
-        FeedbackPanel1.setLayout(FeedbackPanel1Layout);
-        FeedbackPanel1Layout.setHorizontalGroup(
-            FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Feedback1)
-                .addGap(52, 52, 52))
-        );
-        FeedbackPanel1Layout.setVerticalGroup(
-            FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Feedback1)
                 .addGap(157, 157, 157))
         );
 
@@ -298,7 +298,7 @@ public class Login extends javax.swing.JFrame {
             .addComponent(AccPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ProducePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(FarmPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(FeedbackPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CartPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(DashLayout.createSequentialGroup()
                 .addGroup(DashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DashLayout.createSequentialGroup()
@@ -310,9 +310,9 @@ public class Login extends javax.swing.JFrame {
                 .addGap(0, 27, Short.MAX_VALUE))
             .addGroup(DashLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(MyLove)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(FeedbackPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(FeedbackPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         DashLayout.setVerticalGroup(
             DashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,11 +330,11 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FarmPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FeedbackPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 41, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(MyLove)
                 .addContainerGap())
         );
 
@@ -457,18 +457,19 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Acc;
     private javax.swing.JPanel AccPanel;
+    private javax.swing.JLabel CartMenu;
+    private javax.swing.JPanel CartPanel;
     private javax.swing.JPanel Dash;
     private javax.swing.JLabel Farm;
     private javax.swing.JPanel FarmPanel;
     private javax.swing.JLabel Feedback;
-    private javax.swing.JLabel Feedback1;
     private javax.swing.JPanel FeedbackPanel;
-    private javax.swing.JPanel FeedbackPanel1;
     private javax.swing.JLabel GoToSignup;
     private javax.swing.JLabel HI;
     private javax.swing.JLabel Home;
     private javax.swing.JPanel HomePanel;
     private javax.swing.JButton Login;
+    private javax.swing.JLabel MyLove;
     private javax.swing.JLabel Name;
     private javax.swing.JTextField Namefield;
     private javax.swing.JLabel Pass;
@@ -476,7 +477,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel ProducePanel;
     private javax.swing.JCheckBox Remember;
     private javax.swing.JLabel Title;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables

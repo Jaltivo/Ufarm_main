@@ -8,6 +8,10 @@ package com.ufarm.ufarm;
  *
  * @author Jasmine
  */
+
+import java.awt.*;
+import javax.swing.*;
+
 public class Produce3 extends javax.swing.JFrame {
 
     /**
@@ -37,6 +41,37 @@ public class Produce3 extends javax.swing.JFrame {
             }
         });
         
+        
+        setupLabelHoverEffect(Home, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150)); // Normal white, hover light yellow
+        setupLabelHoverEffect(Acc, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Produce, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Farm, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(CartMenu, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Feedback, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+
+        // Set up hover effects for pagination labels
+        setupLabelHoverEffect(Prev, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Next, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Page1, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Page2, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Page3, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+               
+        
+        setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(50, 140, 0));
+        setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(50, 140, 0));
+        setupPanelHoverEffects(ProducePanel, new Color(102, 51, 0), new Color(120, 60, 0));
+        setupPanelHoverEffects(FarmPanel, new Color(33, 113, 0), new Color(50, 140, 0));
+        
+        Color productNormalColor = new Color(35, 101, 51);
+        Color productHoverColor = new Color(50, 130, 70);
+        setupPanelHoverEffects(jPanel14, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel15, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel16, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel17, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel18, productNormalColor, productHoverColor);
+        setupPanelHoverEffects(jPanel19, productNormalColor, productHoverColor);
+        
+        
     }
 
     private void Page1MouseClicked(java.awt.event.MouseEvent evt) {
@@ -52,6 +87,37 @@ public class Produce3 extends javax.swing.JFrame {
     private void PrevMouseClicked(java.awt.event.MouseEvent evt) {
         new Produce2().setVisible(true);  
         this.dispose();
+    }
+    
+    
+    private void setupPanelHoverEffects(JPanel panel, Color normalColor, Color hoverColor) {
+        panel.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panel.setBackground(hoverColor);
+                panel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panel.setBackground(normalColor);
+                panel.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+        });
+    }
+        
+    private void setupLabelHoverEffect(javax.swing.JLabel label, Color normalColor, Color hoverColor) {
+        label.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                label.setForeground(hoverColor);
+                label.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                label.setForeground(normalColor);
+                label.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+        });
     }
     
     /**
@@ -74,11 +140,11 @@ public class Produce3 extends javax.swing.JFrame {
         Produce = new javax.swing.JLabel();
         FarmPanel = new javax.swing.JPanel();
         Farm = new javax.swing.JLabel();
+        CartPanel = new javax.swing.JPanel();
+        CartMenu = new javax.swing.JLabel();
+        MyLove = new javax.swing.JLabel();
         FeedbackPanel = new javax.swing.JPanel();
         Feedback = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        FeedbackPanel1 = new javax.swing.JPanel();
-        Feedback1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -221,53 +287,53 @@ public class Produce3 extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
+        CartPanel.setBackground(new java.awt.Color(33, 113, 0));
+
+        CartMenu.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        CartMenu.setForeground(new java.awt.Color(255, 255, 255));
+        CartMenu.setText("Cart");
+
+        javax.swing.GroupLayout CartPanelLayout = new javax.swing.GroupLayout(CartPanel);
+        CartPanel.setLayout(CartPanelLayout);
+        CartPanelLayout.setHorizontalGroup(
+            CartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CartPanelLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(CartMenu)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        CartPanelLayout.setVerticalGroup(
+            CartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CartPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CartMenu)
+                .addGap(157, 157, 157))
+        );
+
+        MyLove.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        MyLove.setForeground(new java.awt.Color(204, 204, 204));
+        MyLove.setText("Agco, Jasmine Jane @2025");
+
         FeedbackPanel.setBackground(new java.awt.Color(33, 113, 0));
 
         Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         Feedback.setForeground(new java.awt.Color(255, 255, 255));
-        Feedback.setText("Cart");
+        Feedback.setText("Feedback");
 
         javax.swing.GroupLayout FeedbackPanelLayout = new javax.swing.GroupLayout(FeedbackPanel);
         FeedbackPanel.setLayout(FeedbackPanelLayout);
         FeedbackPanelLayout.setHorizontalGroup(
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FeedbackPanelLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Feedback)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(53, 53, 53))
         );
         FeedbackPanelLayout.setVerticalGroup(
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Feedback)
-                .addGap(157, 157, 157))
-        );
-
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Agco, Jasmine Jane @2025");
-
-        FeedbackPanel1.setBackground(new java.awt.Color(33, 113, 0));
-
-        Feedback1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Feedback1.setForeground(new java.awt.Color(255, 255, 255));
-        Feedback1.setText("Feedback");
-
-        javax.swing.GroupLayout FeedbackPanel1Layout = new javax.swing.GroupLayout(FeedbackPanel1);
-        FeedbackPanel1.setLayout(FeedbackPanel1Layout);
-        FeedbackPanel1Layout.setHorizontalGroup(
-            FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Feedback1)
-                .addGap(53, 53, 53))
-        );
-        FeedbackPanel1Layout.setVerticalGroup(
-            FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Feedback1)
                 .addGap(157, 157, 157))
         );
 
@@ -279,7 +345,7 @@ public class Produce3 extends javax.swing.JFrame {
             .addComponent(AccPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ProducePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(FarmPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(FeedbackPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CartPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(DashLayout.createSequentialGroup()
                 .addGroup(DashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DashLayout.createSequentialGroup()
@@ -291,9 +357,9 @@ public class Produce3 extends javax.swing.JFrame {
                 .addGap(0, 27, Short.MAX_VALUE))
             .addGroup(DashLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(MyLove)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(FeedbackPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(FeedbackPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         DashLayout.setVerticalGroup(
             DashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,11 +377,11 @@ public class Produce3 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FarmPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FeedbackPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(MyLove)
                 .addContainerGap())
         );
 
@@ -331,10 +397,6 @@ public class Produce3 extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-
-        Search.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/search.png")); // NOI18N
-
-        Cart.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/grocery-store.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -417,8 +479,6 @@ public class Produce3 extends javax.swing.JFrame {
 
         jPanel14.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/BellPepper.jpeg")); // NOI18N
-
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Bell Pepper");
@@ -465,8 +525,6 @@ public class Produce3 extends javax.swing.JFrame {
         );
 
         jPanel15.setBackground(new java.awt.Color(35, 101, 51));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Lemon.jpeg")); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -515,8 +573,6 @@ public class Produce3 extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Radish.jpg")); // NOI18N
-
         jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Radish");
@@ -563,8 +619,6 @@ public class Produce3 extends javax.swing.JFrame {
         );
 
         jPanel17.setBackground(new java.awt.Color(35, 101, 51));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Parsley.jpg")); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -613,8 +667,6 @@ public class Produce3 extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/SpringOnion.jpeg")); // NOI18N
-
         jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Spring Onion");
@@ -661,8 +713,6 @@ public class Produce3 extends javax.swing.JFrame {
         );
 
         jPanel19.setBackground(new java.awt.Color(35, 101, 51));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Pechay.jpg")); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -835,15 +885,16 @@ public class Produce3 extends javax.swing.JFrame {
     private javax.swing.JLabel Acc;
     private javax.swing.JPanel AccPanel;
     private javax.swing.JLabel Cart;
+    private javax.swing.JLabel CartMenu;
+    private javax.swing.JPanel CartPanel;
     private javax.swing.JPanel Dash;
     private javax.swing.JLabel Farm;
     private javax.swing.JPanel FarmPanel;
     private javax.swing.JLabel Feedback;
-    private javax.swing.JLabel Feedback1;
     private javax.swing.JPanel FeedbackPanel;
-    private javax.swing.JPanel FeedbackPanel1;
     private javax.swing.JLabel Home;
     private javax.swing.JPanel HomePanel;
+    private javax.swing.JLabel MyLove;
     private javax.swing.JLabel Next;
     private javax.swing.JLabel Page1;
     private javax.swing.JLabel Page2;
@@ -859,7 +910,6 @@ public class Produce3 extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
