@@ -24,16 +24,41 @@ public class Cart extends javax.swing.JFrame {
     
     private ArrayList<Map<String, Object>> cartItems;
     private double subtotal = 0.0;
-    private final double DELIVERY_FEE = 5.00; // Fixed delivery fee
+    private final double DELIVERY_FEE = 5.00;
 
+    private ImageIcon loadImageIcon(String path) {
+        try {
+            java.net.URL imgURL = getClass().getResource(path);
+            if (imgURL != null) {
+                return new ImageIcon(imgURL);
+            } else {
+                System.err.println("Couldn't find file: " + path);
+                return new ImageIcon(); // Return empty icon if image not found
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ImageIcon(); // Return empty icon if error occurs
+        }
+    }
+    
     public Cart() {
         initComponents();
         // Get cart items from Produce class
         //this.cartItems = Produce.getCartItems();
-        this.cartItems = com.ufarm.ufarm.Produce.getCartItems();
+        //this.cartItems = com.ufarm.ufarm.Produce.getCartItems();
+        //displayCartItems();
+        //calculateOrderSummary();
+        //setupNavigation();
+        
+        try {
+            this.cartItems =  com.ufarm.ufarm.Produce.getCartItems();
+        } catch (Exception e) {
+            this.cartItems = new ArrayList<>();
+        }
         displayCartItems();
         calculateOrderSummary();
         setupNavigation();
+        
     }
     
     private void setupNavigation() {
@@ -82,21 +107,24 @@ public class Cart extends javax.swing.JFrame {
         JPanel itemsPanel = new JPanel();
         itemsPanel.setLayout(new java.awt.GridLayout(0, 1, 5, 5));
         
-        if (cartItems.isEmpty()) {
-            JLabel emptyLabel = new JLabel("Your cart is empty");
-            emptyLabel.setHorizontalAlignment(JLabel.CENTER);
-            itemsPanel.add(emptyLabel);
+        if (cartItems == null || cartItems.isEmpty()) {
+        JLabel emptyLabel = new JLabel("Your cart is empty");
+        emptyLabel.setHorizontalAlignment(JLabel.CENTER);
+        itemsPanel.add(emptyLabel);
         } else {
             for (Map<String, Object> item : cartItems) {
-                JPanel itemPanel = createCartItemPanel(
-                    (String) item.get("name"),
-                    (Integer) item.get("quantity"),
-                    (ImageIcon) item.get("icon"),
-                    (Double) item.get("price")
-                );
-                itemsPanel.add(itemPanel);
+                try {
+                    JPanel itemPanel = createCartItemPanel(
+                        (String) item.get("name"),
+                        (Integer) item.get("quantity"),
+                        (ImageIcon) item.get("icon"),
+                        (Double) item.get("price")
+                    );
+                    itemsPanel.add(itemPanel);
+                } catch (Exception e) {
+                    System.err.println("Error displaying cart item: " + e.getMessage());
+                }
             }
-        }
         
         // Clear the existing panel and add scroll pane
         jPanel3.removeAll();
@@ -104,6 +132,7 @@ public class Cart extends javax.swing.JFrame {
         jPanel3.add(jScrollPane1);
         jPanel3.revalidate();
         jPanel3.repaint();
+        }
     }
     
     private JPanel createCartItemPanel(String name, int quantity, ImageIcon icon, double price) {
@@ -111,9 +140,14 @@ public class Cart extends javax.swing.JFrame {
         panel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 10));
         panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         
-        // Item image
+        // Item image - use safe loading
         JLabel imageLabel = new JLabel();
-        imageLabel.setIcon(icon);
+        if (icon != null && icon.getImage() != null) {
+            imageLabel.setIcon(icon);
+        } else {
+            // Load a default image or placeholder if original is null
+            imageLabel.setIcon(loadImageIcon("/com/ufarm/ufarm/images/default_product.png"));
+        }
         panel.add(imageLabel);
         
         // Item name and price
@@ -211,8 +245,6 @@ public class Cart extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -454,11 +486,6 @@ public class Cart extends javax.swing.JFrame {
 
         jCheckBox1.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
         jCheckBox1.setText(" Select all items");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -528,22 +555,6 @@ public class Cart extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new java.awt.BorderLayout());
-
-        jScrollPane1.setBorder(null);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -553,31 +564,21 @@ public class Cart extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Dash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jCheckBox1)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addComponent(Dash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -672,8 +673,6 @@ public class Cart extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
