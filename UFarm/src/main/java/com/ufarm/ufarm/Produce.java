@@ -11,9 +11,15 @@ package com.ufarm.ufarm;
 
 import java.awt.*;
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+
 
 public class Produce extends javax.swing.JFrame {
-
+    
+    private static ArrayList<Map<String, Object>> cartItems = new ArrayList<>();
     /**
      * Creates new form Produce
      */
@@ -61,7 +67,23 @@ public class Produce extends javax.swing.JFrame {
                 NextMouseClicked(evt); // Call custom method
             }
         });
-        
+
+
+        Cart.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            showCart();
+        }
+        });
+
+        CartMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            showCart();
+            }
+        });
+
+
         setupLabelHoverEffect(Home, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150)); // Normal white, hover light yellow
         setupLabelHoverEffect(Acc, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
         setupLabelHoverEffect(Produce, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
@@ -153,8 +175,63 @@ public class Produce extends javax.swing.JFrame {
             }
         });
     }
+
+
+    private void showCart() {
+        if (cartItems.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Your cart is empty!", "Cart", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            new CartFrame(cartItems).setVisible(true);
+        }
+    }
     
-       
+
+    // Helper method to add items to cart
+    private void addToCart(String itemName, int quantity, Icon itemIcon) {
+        if (quantity <= 0) {
+            JOptionPane.showMessageDialog(this, "Please select a quantity greater than 0", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Add prices for each item
+        double price = 0.0;
+        switch(itemName) {
+            case "Tomato": price = 1.99; break;
+            case "Eggplant": price = 2.49; break;
+            case "Lettuce": price = 1.79; break;
+            case "Garlic": price = 0.99; break;
+            case "Cabbage": price = 1.49; break;
+            case "Potato": price = 0.79; break;
+        }
+
+        // Check if item already exists in cart
+        for (Map<String, Object> item : cartItems) {
+            if (item.get("name").equals(itemName)) {
+                // Update quantity if item exists
+                item.put("quantity", (Integer)item.get("quantity") + quantity);
+                JOptionPane.showMessageDialog(this, quantity + " more " + itemName + "(s) added to cart!", "Cart Updated", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+        }
+
+        // Add new item to cart
+        Map<String, Object> newItem = new HashMap<>();
+        newItem.put("name", itemName);
+        newItem.put("quantity", quantity);
+        newItem.put("icon", itemIcon);
+        newItem.put("price", price);
+
+        cartItems.add(newItem);
+        JOptionPane.showMessageDialog(this, quantity + " " + itemName + "(s) added to cart!", "Item Added", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    // Add a static method to access cart items from other classes
+    public static ArrayList<Map<String, Object>> getCartItems() {
+        return cartItems;
+    }
+
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -866,27 +943,27 @@ public class Produce extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        addToCart("Tomato", (Integer)jSpinner1.getValue(), jLabel3.getIcon());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        addToCart("Eggplant", (Integer)jSpinner2.getValue(), jLabel4.getIcon());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        addToCart("Lettuce", (Integer)jSpinner3.getValue(), jLabel5.getIcon());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        addToCart("Garlic", (Integer)jSpinner4.getValue(), jLabel6.getIcon());
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        addToCart("Cabbage", (Integer)jSpinner5.getValue(), jLabel7.getIcon());
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        addToCart("Potato", (Integer)jSpinner6.getValue(), jLabel8.getIcon());
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
