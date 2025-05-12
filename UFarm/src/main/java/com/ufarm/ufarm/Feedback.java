@@ -9,6 +9,9 @@ package com.ufarm.ufarm;
  * @author Jasmine
  */
 
+import java.awt.*;
+import javax.swing.*;
+
 public class Feedback extends javax.swing.JFrame {
 
     /**
@@ -24,19 +27,20 @@ public class Feedback extends javax.swing.JFrame {
             }
         });
         
-        Produce.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ProduceMouseClicked(evt); // Call custom method
-            }
-        });
-        
         Home.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 HomeMouseClicked(evt); // Call custom method
             }
         });   
+        
+        setupLabelHoverEffect(Home, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150)); // Normal white, hover light yellow
+        setupLabelHoverEffect(Acc, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
+        setupLabelHoverEffect(Feedback, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));  
+                      
+        setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(50, 140, 0));
+        setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(50, 140, 0));
+        setupPanelHoverEffects(FeedbackPanel, new Color(33, 113, 0), new Color(50, 140, 0));
         
     }
     
@@ -45,18 +49,41 @@ public class Feedback extends javax.swing.JFrame {
         this.dispose();
     }
     
-    private void ProduceMouseClicked(java.awt.event.MouseEvent evt) {
-        new Produce().setVisible(true);  
-        this.dispose();
-    }
-    
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
         new Home().setVisible(true);  
         this.dispose();
     }
     
-    
-    
+    private void setupPanelHoverEffects(JPanel panel, Color normalColor, Color hoverColor) {
+        panel.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panel.setBackground(hoverColor);
+                panel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panel.setBackground(normalColor);
+                panel.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+        });
+    }
+        
+    private void setupLabelHoverEffect(javax.swing.JLabel label, Color normalColor, Color hoverColor) {
+        label.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                label.setForeground(hoverColor);
+                label.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                label.setForeground(normalColor);
+                label.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+        });
+    }
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
