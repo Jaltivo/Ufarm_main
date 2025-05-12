@@ -350,6 +350,10 @@ public class Produce2 extends javax.swing.JFrame {
             }
         });
 
+        Search.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/search.png")); // NOI18N
+
+        Cart.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/grocery-store.png")); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
