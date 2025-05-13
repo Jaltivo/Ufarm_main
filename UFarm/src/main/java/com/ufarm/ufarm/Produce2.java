@@ -11,131 +11,245 @@ package com.ufarm.ufarm;
 
 import java.awt.*;
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Produce2 extends javax.swing.JFrame {
+
+    // Cart items specific to Produce2 page
+    private static ArrayList<Map<String, Object>> cartItems = new ArrayList<>();
 
     /**
      * Creates new form Produce2
      */
     public Produce2() {
-        initComponents();
-        
+        initComponents(); // This will initialize the components
+
+        // Navigation Listeners
         Page1.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Page1MouseClicked(evt); // Call custom method
+                Page1MouseClicked(evt);
             }
         });
-        
+
         Page3.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Page3MouseClicked(evt); // Call custom method
+                Page3MouseClicked(evt);
             }
         });
-        
+
         Next.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NextMouseClicked(evt); // Call custom method
+                NextMouseClicked(evt);
             }
         });
-        
+
         Prev.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PrevMouseClicked(evt); // Call custom method
+                PrevMouseClicked(evt);
             }
         });
-        
-        
-        setupLabelHoverEffect(Home, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150)); // Normal white, hover light yellow
-        setupLabelHoverEffect(Acc, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
-        setupLabelHoverEffect(Produce, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
-        setupLabelHoverEffect(Farm, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
-        setupLabelHoverEffect(CartMenu, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
-        setupLabelHoverEffect(Feedback, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
 
-        // Set up hover effects for pagination labels
-        setupLabelHoverEffect(Prev, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
-        setupLabelHoverEffect(Next, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
-        setupLabelHoverEffect(Page1, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
-        setupLabelHoverEffect(Page2, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
-        setupLabelHoverEffect(Page3, java.awt.Color.WHITE, new java.awt.Color(255, 255, 150));
-               
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                new Home().setVisible(true);
+                dispose();
+            }
+        });
+
+        Acc.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                new Login().setVisible(true); // Or your account/logout page
+                dispose();
+            }
+        });
+
+        Farm.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JOptionPane.showMessageDialog(Produce2.this, "Farm page not implemented yet.");
+            }
+        });
+
+        Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                new Feedback().setVisible(true);
+                dispose();
+            }
+        });
+
+        CartMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                new Cart().setVisible(true);
+                dispose();
+            }
+        });
+
+        // Styling for current page indication (Produce section, Page 2)
+        ProducePanel.setBackground(new Color(102, 51, 0)); // Highlight ProducePanel as current section
+        Produce.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // Bold "Produce" label
+        Produce.setForeground(new java.awt.Color(255, 255, 200)); // Slightly different color for current menu item
         
-        setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(50, 140, 0));
-        setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(50, 140, 0));
-        setupPanelHoverEffects(FarmPanel, new Color(33, 113, 0), new Color(50, 140, 0));
+        Page2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // Bold "Page 2" label
+        // Page2.setForeground(new java.awt.Color(255, 255, 200)); // Example: highlight color if needed, already white
+
+        // Hover Effects for Labels (avoiding current page elements)
+        setupLabelHoverEffect(Home, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
+        setupLabelHoverEffect(Acc, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
+        // Produce label is current, hover handled by not being in this general setup or specific conditions
+        setupLabelHoverEffect(Farm, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
+        setupLabelHoverEffect(CartMenu, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
+        setupLabelHoverEffect(Feedback, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
+
+        setupLabelHoverEffect(Prev, java.awt.Color.WHITE, new java.awt.Color(200, 200, 200));
+        setupLabelHoverEffect(Next, java.awt.Color.WHITE, new java.awt.Color(200, 200, 200));
+        setupLabelHoverEffect(Page1, java.awt.Color.WHITE, new java.awt.Color(200, 200, 200));
+        // Page2 label is current, hover handled by not being in this general setup
+        setupLabelHoverEffect(Page3, java.awt.Color.WHITE, new java.awt.Color(200, 200, 200));
         
+
+        // Hover Effects for Panels (avoiding current page panel)
+        setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(45, 125, 10));
+        setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(45, 125, 10));
+        // ProducePanel is current, hover handled by not being in this general setup
+        setupPanelHoverEffects(FarmPanel, new Color(33, 113, 0), new Color(45, 125, 10));
+        setupPanelHoverEffects(CartPanel, new Color(33, 113, 0), new Color(45, 125, 10));
+        setupPanelHoverEffects(FeedbackPanel, new Color(33,113,0), new Color(45,125,10));
+
         Color productNormalColor = new Color(35, 101, 51);
-        Color productHoverColor = new Color(50, 130, 70);
-        setupPanelHoverEffects(jPanel14, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel15, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel16, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel17, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel18, productNormalColor, productHoverColor);
-        setupPanelHoverEffects(jPanel19, productNormalColor, productHoverColor);
-        
+        Color productHoverColor = new Color(45, 115, 61);
+        setupPanelHoverEffects(jPanel14, productNormalColor, productHoverColor); // GreenBeans
+        setupPanelHoverEffects(jPanel15, productNormalColor, productHoverColor); // Ginger
+        setupPanelHoverEffects(jPanel16, productNormalColor, productHoverColor); // Onion
+        setupPanelHoverEffects(jPanel17, productNormalColor, productHoverColor); // Carrot
+        setupPanelHoverEffects(jPanel18, productNormalColor, productHoverColor); // Chili
+        setupPanelHoverEffects(jPanel19, productNormalColor, productHoverColor); // Spinach
+
+        // Add action listeners for Add to Cart buttons using lambdas
+        // These are the correct listeners and ensure no others are attached in initComponents.
+        jButton1.addActionListener(evt -> addToCart("GreenBeans", (Integer)jSpinner1.getValue(), (ImageIcon)jLabel3.getIcon()));
+        jButton2.addActionListener(evt -> addToCart("Ginger", (Integer)jSpinner2.getValue(), (ImageIcon)jLabel6.getIcon()));
+        jButton3.addActionListener(evt -> addToCart("Onion", (Integer)jSpinner3.getValue(), (ImageIcon)jLabel4.getIcon()));
+        jButton4.addActionListener(evt -> addToCart("Chili", (Integer)jSpinner4.getValue(), (ImageIcon)jLabel5.getIcon()));
+        jButton5.addActionListener(evt -> addToCart("Carrot", (Integer)jSpinner5.getValue(), (ImageIcon)jLabel7.getIcon()));
+        jButton6.addActionListener(evt -> addToCart("Spinach", (Integer)jSpinner6.getValue(), (ImageIcon)jLabel8.getIcon()));
+
+        setLocationRelativeTo(null);
     }
-    
+
     private void Page1MouseClicked(java.awt.event.MouseEvent evt) {
-        new Produce().setVisible(true);  
+        new Produce().setVisible(true);
         this.dispose();
     }
-    
+
     private void Page3MouseClicked(java.awt.event.MouseEvent evt) {
-        new Produce3().setVisible(true);  
+        new Produce3().setVisible(true);
         this.dispose();
     }
-    
+
     private void NextMouseClicked(java.awt.event.MouseEvent evt) {
-        new Produce3().setVisible(true);  
+        new Produce3().setVisible(true);
         this.dispose();
     }
-    
+
     private void PrevMouseClicked(java.awt.event.MouseEvent evt) {
-        new Produce().setVisible(true);  
+        new Produce().setVisible(true);
         this.dispose();
     }
-    
-    
+
     private void setupPanelHoverEffects(JPanel panel, Color normalColor, Color hoverColor) {
         panel.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panel.setBackground(hoverColor);
+                // Avoid changing current page panel (ProducePanel) color on hover
+                if (panel != ProducePanel) { 
+                   panel.setBackground(hoverColor);
+                }
                 panel.setCursor(new Cursor(Cursor.HAND_CURSOR));
             }
             @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panel.setBackground(normalColor);
+                 if (panel != ProducePanel) { // Only revert if it's not the current page panel
+                    panel.setBackground(normalColor);
+                 }
                 panel.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
             }
         });
     }
-        
+
     private void setupLabelHoverEffect(javax.swing.JLabel label, Color normalColor, Color hoverColor) {
+        // Avoid changing color for current "Produce" menu label and "Page2" pagination label
+        boolean isCurrentPageElement = (label == Produce || label == Page2);
+
         label.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                label.setForeground(hoverColor);
+                if (!isCurrentPageElement) {
+                    label.setForeground(hoverColor);
+                }
                 label.setCursor(new Cursor(Cursor.HAND_CURSOR));
             }
             @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                label.setForeground(normalColor);
+                 if (!isCurrentPageElement) {
+                    label.setForeground(normalColor);
+                 }
                 label.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
             }
         });
     }
     
+    private void addToCart(String itemName, int quantity, ImageIcon itemIcon) {
+        if (quantity <= 0) {
+            JOptionPane.showMessageDialog(this, "Please select a quantity greater than 0", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        double price = 0.0;
+        switch(itemName) {
+            case "GreenBeans": price = 2.19; break;
+            case "Ginger":     price = 3.29; break;
+            case "Onion":      price = 1.19; break;
+            case "Chili":      price = 2.09; break;
+            case "Carrot":     price = 1.59; break;
+            case "Spinach":    price = 2.69; break;
+            default:
+                JOptionPane.showMessageDialog(this, "Price for " + itemName + " not found.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+        }
+        for (Map<String, Object> item : cartItems) {
+            if (item.get("name").equals(itemName)) {
+                item.put("quantity", (Integer)item.get("quantity") + quantity);
+                JOptionPane.showMessageDialog(this, quantity + " more " + itemName + "(s) added to cart!", "Cart Updated", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+        }
+        Map<String, Object> newItem = new HashMap<>();
+        newItem.put("name", itemName);
+        newItem.put("quantity", quantity);
+        newItem.put("icon", itemIcon);
+        newItem.put("price", price);
+        newItem.put("selected", true);
+        cartItems.add(newItem);
+        JOptionPane.showMessageDialog(this, quantity + " " + itemName + "(s) added to cart!", "Item Added", JOptionPane.INFORMATION_MESSAGE);
+    }
 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
+    public static ArrayList<Map<String, Object>> getCartItems() {
+        return cartItems;
+    }
+
+    public static void clearCartItems() {
+        cartItems.clear();
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -199,6 +313,7 @@ public class Produce2 extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("UFarm - Produce Page 2");
 
         Dash.setBackground(new java.awt.Color(35, 101, 51));
 
@@ -252,10 +367,10 @@ public class Produce2 extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        ProducePanel.setBackground(new java.awt.Color(102, 51, 0));
+        ProducePanel.setBackground(new java.awt.Color(102, 51, 0)); // Current page highlight
 
         Produce.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        Produce.setForeground(new java.awt.Color(255, 255, 255));
+        Produce.setForeground(new java.awt.Color(255, 255, 255)); // Set in constructor for current page
         Produce.setText("Produce");
 
         javax.swing.GroupLayout ProducePanelLayout = new javax.swing.GroupLayout(ProducePanel);
@@ -391,7 +506,7 @@ public class Produce2 extends javax.swing.JFrame {
                 .addComponent(CartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(MyLove)
                 .addContainerGap())
         );
@@ -409,9 +524,9 @@ public class Produce2 extends javax.swing.JFrame {
             }
         });
 
-        Search.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/search.png")); // NOI18N
+        Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/search.png"))); // NOI18N
 
-        Cart.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/grocery-store.png")); // NOI18N
+        Cart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/grocery-store.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -420,7 +535,7 @@ public class Produce2 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Search)
@@ -438,7 +553,7 @@ public class Produce2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 13, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         jPanel21.setBackground(new java.awt.Color(35, 101, 51));
@@ -455,8 +570,8 @@ public class Produce2 extends javax.swing.JFrame {
         Page1.setText("  1 ");
         Page1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        Page2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        Page2.setForeground(new java.awt.Color(255, 255, 255));
+        Page2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N // Styled in constructor
+        Page2.setForeground(new java.awt.Color(255, 255, 255));     // Styled in constructor
         Page2.setText("  2  ");
         Page2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
@@ -483,18 +598,16 @@ public class Produce2 extends javax.swing.JFrame {
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Prev, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Page1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Page2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(Page1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Page2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(Page3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Next, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel14.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/GreenBeans.jpeg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/GreenBeans.jpeg"))); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -504,11 +617,7 @@ public class Produce2 extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("+ ADD");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        // NO addActionListener for jButton1ActionPerformed(evt) here. It's handled in constructor.
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -543,7 +652,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel15.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Ginger.jpeg")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Ginger.jpeg"))); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -553,11 +662,7 @@ public class Produce2 extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("+ ADD");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        // NO addActionListener for jButton2ActionPerformed(evt) here.
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -592,7 +697,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Onion.jpg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Onion.jpg"))); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -602,11 +707,7 @@ public class Produce2 extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("+ ADD");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
+        // NO addActionListener for jButton3ActionPerformed(evt) here.
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -641,7 +742,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel17.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Carrot.jpeg")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Carrot.jpeg"))); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -651,11 +752,7 @@ public class Produce2 extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("+ ADD");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
+        // NO addActionListener for jButton5ActionPerformed(evt) here.
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -690,7 +787,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Chili.jpg")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Chili.jpg"))); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -700,11 +797,7 @@ public class Produce2 extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("+ ADD");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
+        // NO addActionListener for jButton4ActionPerformed(evt) here.
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -739,7 +832,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel19.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("/Users/Jasmine/Documents/GitHub/UFarm/Ufarm_main/UFarm/src/main/java/com/ufarm/ufarm/images/Spinach.jpg")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/Spinach.jpg"))); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -749,11 +842,7 @@ public class Produce2 extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("+ ADD");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
+        // NO addActionListener for jButton6ActionPerformed(evt) here.
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -845,42 +934,11 @@ public class Produce2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+         String searchText = jTextField1.getText();
+         System.out.println("Search on Produce Page 2: " + searchText);
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -888,22 +946,11 @@ public class Produce2 extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Produce2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Produce2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Produce2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Produce2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Produce2().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Produce2().setVisible(true);
         });
     }
 

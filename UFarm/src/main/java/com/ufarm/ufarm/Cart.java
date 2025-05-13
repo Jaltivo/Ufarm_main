@@ -7,12 +7,13 @@ package com.ufarm.ufarm;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.awt.event.MouseAdapter; // Added import
-import java.awt.event.MouseEvent;   // Added import
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 import javax.swing.*;
-import java.awt.image.BufferedImage; // For placeholder icon
-import java.util.Iterator; // Added for safe removal
+import javax.swing.JLabel;
+import java.awt.image.BufferedImage;
+import java.util.Iterator;
 
 public class Cart extends javax.swing.JFrame {
 
@@ -21,15 +22,12 @@ public class Cart extends javax.swing.JFrame {
     private final double DELIVERY_FEE = 5.00;
     private ArrayList<JCheckBox> itemCheckBoxes = new ArrayList<>();
 
-    // Labels for dynamic values in Order Summary
     private javax.swing.JLabel subtotalValueLabel;
     private javax.swing.JLabel deliveryFeeValueLabel;
     private javax.swing.JLabel totalValueLabel;
 
-    // Panel and ScrollPane for itemized list in Order Summary
     private javax.swing.JPanel selectedItemsDisplayPanel;
     private javax.swing.JScrollPane itemsSummaryScrollPane;
-
 
     private ImageIcon loadImageIcon(String path) {
         try {
@@ -38,35 +36,82 @@ public class Cart extends javax.swing.JFrame {
                 return new ImageIcon(imgURL);
             } else {
                 System.err.println("Couldn't find file: " + path);
-                return new ImageIcon(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB));
+                return new ImageIcon(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB)); // Placeholder
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return new ImageIcon(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB));
+            return new ImageIcon(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB)); // Placeholder
         }
     }
 
     public Cart() {
-        initComponents();
-        try {
-            ArrayList<Map<String, Object>> itemsFromProduce = com.ufarm.ufarm.Produce.getCartItems();
-            this.cartItems = (itemsFromProduce != null) ? new ArrayList<>(itemsFromProduce) : new ArrayList<>();
-            if (this.cartItems != null) {
-                for (Map<String, Object> item : this.cartItems) {
-                    if (item != null && !item.containsKey("selected")) {
-                        item.put("selected", true);
-                    }
+        initComponents(); // This method should ideally handle instantiation of jLabel4-7 & jSeparators 2-3
+        this.cartItems = new ArrayList<>();
+
+        ArrayList<Map<String, Object>> itemsFromProduce1 = com.ufarm.ufarm.Produce.getCartItems();
+        if (itemsFromProduce1 != null) {
+            for (Map<String, Object> item : itemsFromProduce1) {
+                if (item != null) {
+                     addItemToConsolidatedCart(new HashMap<>(item));
                 }
             }
-        } catch (Exception e) {
-            System.err.println("Error fetching cart items: " + e.getMessage());
-            this.cartItems = new ArrayList<>();
         }
+
+        ArrayList<Map<String, Object>> itemsFromProduce2 = com.ufarm.ufarm.Produce2.getCartItems();
+        if (itemsFromProduce2 != null) {
+            for (Map<String, Object> item : itemsFromProduce2) {
+                 if (item != null) {
+                    addItemToConsolidatedCart(new HashMap<>(item));
+                 }
+            }
+        }
+
+        ArrayList<Map<String, Object>> itemsFromProduce3 = com.ufarm.ufarm.Produce3.getCartItems();
+        if (itemsFromProduce3 != null) {
+            for (Map<String, Object> item : itemsFromProduce3) {
+                if (item != null) {
+                    addItemToConsolidatedCart(new HashMap<>(item));
+                }
+            }
+        }
+
         displayCartItems();
         calculateOrderSummary();
         updateSelectAllCheckboxState();
         setupNavigation();
         setLocationRelativeTo(null);
+    }
+
+    private void addItemToConsolidatedCart(Map<String, Object> newItemFromPage) {
+        if (newItemFromPage == null || newItemFromPage.get("name") == null || newItemFromPage.get("quantity") == null) {
+            System.err.println("Attempted to add invalid item to consolidated cart: " + newItemFromPage);
+            return;
+        }
+        String itemName = (String) newItemFromPage.get("name");
+        int quantity;
+        try {
+            quantity = (Integer) newItemFromPage.get("quantity");
+        } catch (ClassCastException e) {
+            System.err.println("Invalid quantity type for item: " + itemName);
+            return;
+        }
+
+        for (Map<String, Object> existingItem : this.cartItems) {
+            if (existingItem.get("name").equals(itemName)) {
+                existingItem.put("quantity", (Integer) existingItem.get("quantity") + quantity);
+                if (newItemFromPage.containsKey("price")) {
+                    existingItem.put("price", newItemFromPage.get("price"));
+                }
+                if (newItemFromPage.containsKey("icon")) {
+                    existingItem.put("icon", newItemFromPage.get("icon"));
+                }
+                return;
+            }
+        }
+        if (!newItemFromPage.containsKey("selected")) {
+            newItemFromPage.put("selected", true);
+        }
+        this.cartItems.add(newItemFromPage);
     }
 
     private void setupNavigation() {
@@ -80,15 +125,14 @@ public class Cart extends javax.swing.JFrame {
         Produce.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                new Produce().setVisible(true);
+                new com.ufarm.ufarm.Produce().setVisible(true);
                 dispose();
             }
         });
         Farm.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                new Farm().setVisible(true);
-                dispose();
+                 JOptionPane.showMessageDialog(Cart.this, "Farm page not implemented yet.");
             }
         });
         Feedback1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -159,7 +203,6 @@ public class Cart extends javax.swing.JFrame {
         jPanel3.repaint();
     }
 
-    // --- MODIFIED createCartItemPanel for better width management ---
     private JPanel createCartItemPanel(Map<String, Object> item) {
         String itemNameValue = (String) item.get("name");
         int quantity = (Integer) item.get("quantity");
@@ -168,19 +211,14 @@ public class Cart extends javax.swing.JFrame {
         boolean isSelected = (Boolean) item.getOrDefault("selected", true);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout(5, 0)); // hgap between components
+        panel.setLayout(new BorderLayout(5, 0));
         panel.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(200, 200, 200)),
-            BorderFactory.createEmptyBorder(10, 5, 10, 5)) // Reduced horizontal padding slightly
+            BorderFactory.createEmptyBorder(10, 5, 10, 5))
         );
         panel.setBackground(Color.WHITE);
-        // Preferred width should be less than the container's available width
-        // jPanel3 (container for jScrollPane1) is ~448px wide.
-        // jScrollPane1 has itemsPanel with 10px padding each side. Usable for itemsPanel: ~428px.
-        // If vertical scrollbar for itemsPanel is visible, it takes ~15-20px. Effective: ~408px.
-        panel.setPreferredSize(new Dimension(400, 100)); // Item panel target width
+        panel.setPreferredSize(new Dimension(400, 100));
         panel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 120));
-
 
         JCheckBox itemCheckBox = new JCheckBox();
         itemCheckBox.setSelected(isSelected);
@@ -194,7 +232,7 @@ public class Cart extends javax.swing.JFrame {
         itemCheckBoxes.add(itemCheckBox);
         panel.add(itemCheckBox, BorderLayout.WEST);
 
-        JPanel centerContentPanel = new JPanel(new BorderLayout(8,0)); // hgap for image and info
+        JPanel centerContentPanel = new JPanel(new BorderLayout(8,0));
         centerContentPanel.setBackground(Color.WHITE);
         JLabel imageLabel = new JLabel();
         imageLabel.setPreferredSize(new Dimension(80, 80));
@@ -211,13 +249,10 @@ public class Cart extends javax.swing.JFrame {
         infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
         infoPanel.setBackground(Color.WHITE);
 
-        // Use HTML to allow name label to wrap and constrain its width
-        // Estimated available width for name: panelWidth(400) - checkbox(~30) - image(80) - controlPanel(115) - gaps(~15) = ~160
-        int nameLabelWidth = 150; // Approximate width for the name label before it wraps
+        int nameLabelWidth = 150;
         JLabel nameLabel = new JLabel("<html><body style='width: " + nameLabelWidth + "px'>" + itemNameValue + "</body></html>");
         nameLabel.setFont(new Font("Helvetica Neue", Font.BOLD, 16));
         nameLabel.setForeground(new Color(35, 101, 51));
-        // nameLabel.setMinimumSize(new Dimension(nameLabelWidth -20, 10)); // Optional: prevent extreme shrinking
 
         JLabel priceLabelText = new JLabel(String.format("$%.2f each", price));
         priceLabelText.setFont(new Font("Helvetica Neue", Font.PLAIN, 14));
@@ -231,12 +266,10 @@ public class Cart extends javax.swing.JFrame {
         controlPanel.setLayout(new BoxLayout(controlPanel, BoxLayout.Y_AXIS));
         controlPanel.setBackground(Color.WHITE);
         controlPanel.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        // Give controlPanel a fixed preferred width to ensure its contents fit
-        Dimension controlPanelPrefSize = new Dimension(115, 80); // Adjusted width for controls
+        Dimension controlPanelPrefSize = new Dimension(115, 80);
         controlPanel.setPreferredSize(controlPanelPrefSize);
-        controlPanel.setMinimumSize(controlPanelPrefSize); // Prevent shrinking below preferred
+        controlPanel.setMinimumSize(controlPanelPrefSize);
         controlPanel.setMaximumSize(new Dimension(controlPanelPrefSize.width + 10, Integer.MAX_VALUE) );
-
 
         JLabel itemTotalLabel = new JLabel(String.format("$%.2f", price * quantity));
         itemTotalLabel.setFont(new Font("Helvetica Neue", Font.BOLD, 16));
@@ -256,7 +289,7 @@ public class Cart extends javax.swing.JFrame {
                  calculateOrderSummary();
             }
         });
-        JPanel quantitySpinnerPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 0,0)); // Tight layout
+        JPanel quantitySpinnerPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 0,0));
         quantitySpinnerPanel.setBackground(Color.WHITE);
         quantitySpinnerPanel.add(new JLabel("Qty:"));
         quantitySpinnerPanel.add(quantitySpinner);
@@ -266,15 +299,24 @@ public class Cart extends javax.swing.JFrame {
         removeButton.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
         removeButton.setBackground(new Color(220, 53, 69));
         removeButton.setForeground(Color.WHITE);
-        removeButton.setMargin(new Insets(5, 8, 5, 8)); // Control padding
+        removeButton.setMargin(new Insets(5, 8, 5, 8));
         removeButton.setAlignmentX(Component.RIGHT_ALIGNMENT);
         removeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         removeButton.addActionListener(evt -> {
             if (cartItems != null) {
-                int itemIndex = cartItems.indexOf(item);
-                cartItems.remove(item);
-                if(itemIndex != -1 && itemIndex < itemCheckBoxes.size()){
-                    itemCheckBoxes.remove(itemIndex);
+                Iterator<Map<String, Object>> it = cartItems.iterator();
+                int listIndex = 0;
+                int foundAtIndex = -1;
+                while(it.hasNext()){
+                    if(it.next() == item){
+                        it.remove();
+                        foundAtIndex = listIndex;
+                        break;
+                    }
+                    listIndex++;
+                }
+                if(foundAtIndex != -1 && foundAtIndex < itemCheckBoxes.size()){
+                    itemCheckBoxes.remove(foundAtIndex);
                 }
             }
             displayCartItems();
@@ -309,17 +351,17 @@ public class Cart extends javax.swing.JFrame {
                         String name = (String) item.get("name");
 
                         if (priceObj instanceof Number && quantityObj instanceof Number && name != null) {
-                            double price = ((Number) priceObj).doubleValue();
-                            int quantity = ((Number) quantityObj).intValue();
-                            if (price < 0 || quantity < 0) continue;
-                            double itemLineTotal = price * quantity;
+                            double priceVal = ((Number) priceObj).doubleValue();
+                            int quantityVal = ((Number) quantityObj).intValue();
+                            if (priceVal < 0 || quantityVal < 0) continue;
+                            double itemLineTotal = priceVal * quantityVal;
                             subtotal += itemLineTotal;
                             selectedItemCount++;
 
                             JPanel itemSummaryLine = new JPanel(new BorderLayout(5,0));
                             itemSummaryLine.setOpaque(false);
                             itemSummaryLine.setBackground(selectedItemsDisplayPanel.getBackground());
-                            JLabel itemNameQtyLabel = new JLabel(String.format("%s (x%d)", name, quantity));
+                            JLabel itemNameQtyLabel = new JLabel(String.format("%s (x%d)", name, quantityVal));
                             itemNameQtyLabel.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
                             JLabel itemPriceLabel = new JLabel(String.format("$%.2f", itemLineTotal));
                             itemPriceLabel.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
@@ -339,7 +381,7 @@ public class Cart extends javax.swing.JFrame {
             }
         }
 
-        if (selectedItemCount > 0) {
+        if (selectedItemCount > 0 && selectedItemsDisplayPanel.getComponentCount() > 0) { // Check if components were added
             selectedItemsDisplayPanel.add(Box.createRigidArea(new Dimension(0, 5)));
             JSeparator itemSummarySeparator = new JSeparator();
             itemSummarySeparator.setForeground(new Color(220,220,220));
@@ -350,7 +392,7 @@ public class Cart extends javax.swing.JFrame {
         double currentDeliveryFee = (selectedItemCount > 0) ? DELIVERY_FEE : 0.0;
         double total = subtotal + currentDeliveryFee;
 
-        if (subtotalValueLabel == null) subtotalValueLabel = new JLabel(); // Should be init by initComponents
+        if (subtotalValueLabel == null) subtotalValueLabel = new JLabel();
         if (deliveryFeeValueLabel == null) deliveryFeeValueLabel = new JLabel();
         if (totalValueLabel == null) totalValueLabel = new JLabel();
 
@@ -385,12 +427,17 @@ public class Cart extends javax.swing.JFrame {
         }
         jCheckBox1.setEnabled(true);
         boolean allSelected = true;
-        for (Map<String, Object> item : cartItems) {
-            if (item != null && !(Boolean) item.getOrDefault("selected", false)) {
-                allSelected = false;
-                break;
+        if (!cartItems.isEmpty()) {
+            for (Map<String, Object> item : cartItems) {
+                if (item != null && !(Boolean) item.getOrDefault("selected", false)) {
+                    allSelected = false;
+                    break;
+                }
             }
+        } else {
+            allSelected = false;
         }
+
         ItemListener[] listeners = jCheckBox1.getItemListeners();
         for(ItemListener listener : listeners) {
             if (listener != null) jCheckBox1.removeItemListener(listener);
@@ -427,23 +474,29 @@ public class Cart extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
 
+        // These components are part of the .form file definition for jPanel2.
+        // They should be instantiated by NetBeans generated code if the form is not corrupted.
+        // Here, we ensure they are available as class members.
+        // Their text and properties will be set in the custom jPanel2 setup.
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("UFarm - My Cart");
-        setPreferredSize(new java.awt.Dimension(950, 600)); // Set a reasonable default window size
+        setPreferredSize(new java.awt.Dimension(950, 600));
 
         Dash.setBackground(new java.awt.Color(35, 101, 51));
 
-        Title.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
+        Title.setFont(new java.awt.Font("Georgia", 1, 36));
         Title.setForeground(new java.awt.Color(255, 255, 255));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setText("UFarm");
@@ -643,7 +696,7 @@ public class Cart extends javax.swing.JFrame {
                 .addComponent(FeedbackPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FeedbackPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
@@ -652,6 +705,7 @@ public class Cart extends javax.swing.JFrame {
             final Color hoverColor = new Color(50, 120, 70);
             final Color originalColor = new Color(35, 101, 51);
             final Color selectedColor = new Color(65, 131, 81);
+
             @Override
             public void mouseEntered(MouseEvent me) {
                 JPanel panel = (JPanel) me.getSource();
@@ -659,6 +713,7 @@ public class Cart extends javax.swing.JFrame {
                     panel.setBackground(hoverColor);
                 }
             }
+
             @Override
             public void mouseExited(MouseEvent me) {
                 JPanel panel = (JPanel) me.getSource();
@@ -716,14 +771,17 @@ public class Cart extends javax.swing.JFrame {
         subtotalValueLabel = new JLabel();
         deliveryFeeValueLabel = new JLabel();
         totalValueLabel = new JLabel();
+
         selectedItemsDisplayPanel = new JPanel();
         selectedItemsDisplayPanel.setLayout(new BoxLayout(selectedItemsDisplayPanel, BoxLayout.Y_AXIS));
         selectedItemsDisplayPanel.setBackground(Color.WHITE);
+        selectedItemsDisplayPanel.setOpaque(true);
+
         itemsSummaryScrollPane = new JScrollPane(selectedItemsDisplayPanel);
         itemsSummaryScrollPane.setBorder(BorderFactory.createEmptyBorder());
         itemsSummaryScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         itemsSummaryScrollPane.getViewport().setBackground(selectedItemsDisplayPanel.getBackground());
-        itemsSummaryScrollPane.setPreferredSize(new Dimension(230, 150)); // Increased height for item list
+        itemsSummaryScrollPane.setPreferredSize(new Dimension(230, 150));
         itemsSummaryScrollPane.setMinimumSize(new Dimension(200, 80));
 
         jPanel2.setBackground(new java.awt.Color(245, 245, 245));
@@ -738,17 +796,39 @@ public class Cart extends javax.swing.JFrame {
             BorderFactory.createEmptyBorder(5, 10, 10, 10)
         ));
         jPanel2.setLayout(new BoxLayout(jPanel2, BoxLayout.Y_AXIS));
+
+        // Configure jLabel4 (Order Summary title label)
+        // This assumes jLabel4 is instantiated by NetBeans generated code
+        if (jLabel4 != null) { // Check if instantiated by generated code
+            jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 15)); // From .form
+            jLabel4.setText("Order Summary"); // From .form
+            // jPanel2.add(jLabel4); // If it's meant to be at the top, before the TitledBorder content
+        }
+         // jPanel2.add(Box.createRigidArea(new Dimension(0, 5))); // Spacer if jLabel4 is added
+
+        // Configure jSeparator2
+        // This assumes jSeparator2 is instantiated by NetBeans generated code
+        if (jSeparator2 != null) {
+            jSeparator2.setForeground(new java.awt.Color(35,101,53)); // from .form
+            jSeparator2.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
+            // jPanel2.add(jSeparator2); // Original .form might place this differently
+            // jPanel2.add(Box.createRigidArea(new Dimension(0,8)));
+        }
+
+
         jPanel2.add(itemsSummaryScrollPane);
         jPanel2.add(Box.createRigidArea(new Dimension(0, 8)));
-        JSeparator itemsToTotalSeparator = new JSeparator();
-        itemsToTotalSeparator.setForeground(new Color(200, 200, 200));
+
+        JSeparator itemsToTotalSeparator = new JSeparator(); // This is a new local separator
+        itemsToTotalSeparator.setForeground(new Color(200,200,200));
         itemsToTotalSeparator.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
         jPanel2.add(itemsToTotalSeparator);
         jPanel2.add(Box.createRigidArea(new Dimension(0, 8)));
-        JPanel subtotalPanel = new JPanel(new BorderLayout(5, 0));
+
+        JPanel subtotalPanel = new JPanel(new BorderLayout(5,0));
         subtotalPanel.setOpaque(false);
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 14));
-        jLabel5.setText("Subtotal:");
+        jLabel5.setText("Subtotal"); // Use class member, set text from .form
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // Your custom font
         subtotalValueLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 14));
         subtotalValueLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         subtotalValueLabel.setText("$0.00");
@@ -756,10 +836,11 @@ public class Cart extends javax.swing.JFrame {
         subtotalPanel.add(subtotalValueLabel, BorderLayout.EAST);
         jPanel2.add(subtotalPanel);
         jPanel2.add(Box.createRigidArea(new Dimension(0, 5)));
-        JPanel deliveryPanel = new JPanel(new BorderLayout(5, 0));
+
+        JPanel deliveryPanel = new JPanel(new BorderLayout(5,0));
         deliveryPanel.setOpaque(false);
-        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 14));
-        jLabel6.setText("Delivery Fee:");
+        jLabel6.setText("Delivery Fee"); // Use class member, set text from .form
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // Your custom font
         deliveryFeeValueLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 14));
         deliveryFeeValueLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         deliveryFeeValueLabel.setText("$0.00");
@@ -767,28 +848,31 @@ public class Cart extends javax.swing.JFrame {
         deliveryPanel.add(deliveryFeeValueLabel, BorderLayout.EAST);
         jPanel2.add(deliveryPanel);
         jPanel2.add(Box.createRigidArea(new Dimension(0, 10)));
-        jSeparator3.setForeground(new java.awt.Color(35, 101, 51));
+
+        jSeparator3.setForeground(new java.awt.Color(35,101,51)); // Use class member, from .form (color slightly different in your code)
         jSeparator3.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
         jPanel2.add(jSeparator3);
         jPanel2.add(Box.createRigidArea(new Dimension(0, 10)));
-        JPanel totalPanel = new JPanel(new BorderLayout(5, 0));
+
+        JPanel totalPanel = new JPanel(new BorderLayout(5,0));
         totalPanel.setOpaque(false);
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 18));
-        jLabel7.setForeground(new java.awt.Color(35, 101, 51));
-        jLabel7.setText("Total:");
+        jLabel7.setText("TOTAL"); // Use class member, set text from .form (font details differ)
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // Your custom font
+        jLabel7.setForeground(new java.awt.Color(35,101,51));
         totalValueLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18));
-        totalValueLabel.setForeground(new java.awt.Color(35, 101, 51));
+        totalValueLabel.setForeground(new java.awt.Color(35,101,51));
         totalValueLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         totalValueLabel.setText("$0.00");
         totalPanel.add(jLabel7, BorderLayout.WEST);
         totalPanel.add(totalValueLabel, BorderLayout.EAST);
         jPanel2.add(totalPanel);
         jPanel2.add(Box.createRigidArea(new Dimension(0, 15)));
+
         jButton1.setBackground(new java.awt.Color(35, 101, 51));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 16));
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // .form says 17
         jButton1.setForeground(Color.WHITE);
         jButton1.setText("Place Order");
-        jButton1.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        jButton1.setBorder(BorderFactory.createEmptyBorder(10,20,10,20));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setAlignmentX(Component.CENTER_ALIGNMENT);
         jButton1.setMaximumSize(new Dimension(Integer.MAX_VALUE, jButton1.getPreferredSize().height + 5));
@@ -798,6 +882,7 @@ public class Cart extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(224, 224, 224)));
         jPanel3.setLayout(new java.awt.BorderLayout());
+
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jPanel3.add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -816,10 +901,10 @@ public class Cart extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jCheckBox1)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)) // Adjusted default width for jPanel3
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)) // Adjusted size based on .form
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE) // Adjusted size from .form for jPanel2
+                        .addGap(18, 18, 18)))) // Reduced end margin to better match .form layout
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -828,10 +913,10 @@ public class Cart extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED) // Was 18, now 11 to match .form more closely if jPanel3/2 are shorter
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE) // Adjusted
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)) // Adjusted from .form (jPanel2 height)
                 .addGap(18, 18, 18))
         );
 
@@ -853,6 +938,7 @@ public class Cart extends javax.swing.JFrame {
             calculateOrderSummary();
             double currentDeliveryFee = (subtotal > 0) ? DELIVERY_FEE : 0.0;
             double finalTotal = subtotal + currentDeliveryFee;
+
             String confirmationMessage = String.format(
                 "Please confirm your order:\n\n" +
                 "Subtotal:         $%.2f\n" +
@@ -862,13 +948,16 @@ public class Cart extends javax.swing.JFrame {
                 "Proceed with this order?",
                 subtotal, currentDeliveryFee, finalTotal
             );
+
             int response = JOptionPane.showConfirmDialog(
                 this, confirmationMessage, "Order Confirmation",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE
             );
+
             if (response == JOptionPane.YES_OPTION) {
                 System.out.println("Order placed for total: $" + String.format("%.2f", finalTotal));
                 System.out.println("Items ordered:");
+
                 if (cartItems != null) {
                     Iterator<Map<String, Object>> iterator = cartItems.iterator();
                     while (iterator.hasNext()) {
@@ -878,11 +967,15 @@ public class Cart extends javax.swing.JFrame {
                             iterator.remove();
                         }
                     }
-                    itemCheckBoxes.clear();
+                    com.ufarm.ufarm.Produce.getCartItems().clear();
+                    com.ufarm.ufarm.Produce2.getCartItems().clear();
+                    com.ufarm.ufarm.Produce3.getCartItems().clear();
                 }
+
                 JOptionPane.showMessageDialog(this,
                     "Order placed successfully! Thank you for your purchase.",
                     "Order Success", JOptionPane.INFORMATION_MESSAGE);
+
                 displayCartItems();
                 calculateOrderSummary();
                 updateSelectAllCheckboxState();
@@ -899,12 +992,7 @@ public class Cart extends javax.swing.JFrame {
                         item.put("selected", selectAll);
                     }
                 }
-                for (JCheckBox checkBox : itemCheckBoxes) {
-                    ItemListener[] cbListeners = checkBox.getItemListeners();
-                    for(ItemListener l : cbListeners) checkBox.removeItemListener(l);
-                    checkBox.setSelected(selectAll);
-                    for(ItemListener l : cbListeners) checkBox.addItemListener(l);
-                }
+                displayCartItems();
             }
             calculateOrderSummary();
          }
