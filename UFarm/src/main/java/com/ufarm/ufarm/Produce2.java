@@ -215,12 +215,12 @@ public class Produce2 extends javax.swing.JFrame {
         }
         double price = 0.0;
         switch(itemName) {
-            case "GreenBeans": price = 2.19; break;
-            case "Ginger":     price = 3.29; break;
-            case "Onion":      price = 1.19; break;
-            case "Chili":      price = 2.09; break;
-            case "Carrot":     price = 1.59; break;
-            case "Spinach":    price = 2.69; break;
+            case "GreenBeans": price = 40.00; break;
+            case "Ginger":     price = 95.00; break;
+            case "Onion":      price = 80.00; break;
+            case "Chili":      price = 350.00; break;
+            case "Carrot":     price = 120.00; break;
+            case "Spinach":    price = 75.00; break;
             default:
                 JOptionPane.showMessageDialog(this, "Price for " + itemName + " not found.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -615,7 +615,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("GreenBeans");
+        jLabel9.setText("GreenBeans   Php 40.00");
 
         jButton1.setBackground(new java.awt.Color(35, 101, 51));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -660,7 +660,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Ginger");
+        jLabel12.setText("Ginger             Php 95.00");
 
         jButton2.setBackground(new java.awt.Color(35, 101, 51));
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -705,7 +705,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Onion");
+        jLabel10.setText("Onion              Php 80.00");
 
         jButton3.setBackground(new java.awt.Color(35, 101, 51));
         jButton3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -750,7 +750,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Carrot");
+        jLabel13.setText("Carrot            Php 120.00");
 
         jButton5.setBackground(new java.awt.Color(35, 101, 51));
         jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -795,7 +795,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Chili");
+        jLabel11.setText("Chili               Php 350.00");
 
         jButton4.setBackground(new java.awt.Color(35, 101, 51));
         jButton4.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -840,7 +840,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Spinach");
+        jLabel14.setText("Spinach          Php 75.00");
 
         jButton6.setBackground(new java.awt.Color(35, 101, 51));
         jButton6.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N

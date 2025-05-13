@@ -5,7 +5,6 @@
 package com.ufarm.ufarm;
 
 import java.awt.*;
-import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -254,7 +253,7 @@ public class Cart extends javax.swing.JFrame {
         nameLabel.setFont(new Font("Helvetica Neue", Font.BOLD, 16));
         nameLabel.setForeground(new Color(35, 101, 51));
 
-        JLabel priceLabelText = new JLabel(String.format("$%.2f each", price));
+        JLabel priceLabelText = new JLabel(String.format("Php %.2f /kilo", price));
         priceLabelText.setFont(new Font("Helvetica Neue", Font.PLAIN, 14));
         infoPanel.add(nameLabel);
         infoPanel.add(Box.createRigidArea(new Dimension(0, 5)));
@@ -271,7 +270,7 @@ public class Cart extends javax.swing.JFrame {
         controlPanel.setMinimumSize(controlPanelPrefSize);
         controlPanel.setMaximumSize(new Dimension(controlPanelPrefSize.width + 10, Integer.MAX_VALUE) );
 
-        JLabel itemTotalLabel = new JLabel(String.format("$%.2f", price * quantity));
+        JLabel itemTotalLabel = new JLabel(String.format("Php %.2f", price * quantity));
         itemTotalLabel.setFont(new Font("Helvetica Neue", Font.BOLD, 16));
         itemTotalLabel.setForeground(new Color(35, 101, 51));
         itemTotalLabel.setAlignmentX(Component.RIGHT_ALIGNMENT);
@@ -284,7 +283,7 @@ public class Cart extends javax.swing.JFrame {
         quantitySpinner.addChangeListener(evt -> {
             int newQuantitySpinnerVal = (Integer) quantitySpinner.getValue();
             item.put("quantity", newQuantitySpinnerVal);
-            itemTotalLabel.setText(String.format("$%.2f", price * newQuantitySpinnerVal));
+            itemTotalLabel.setText(String.format("Php %.2f", price * newQuantitySpinnerVal));
             if((Boolean)item.getOrDefault("selected", false)) {
                  calculateOrderSummary();
             }
@@ -363,7 +362,7 @@ public class Cart extends javax.swing.JFrame {
                             itemSummaryLine.setBackground(selectedItemsDisplayPanel.getBackground());
                             JLabel itemNameQtyLabel = new JLabel(String.format("%s (x%d)", name, quantityVal));
                             itemNameQtyLabel.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
-                            JLabel itemPriceLabel = new JLabel(String.format("$%.2f", itemLineTotal));
+                            JLabel itemPriceLabel = new JLabel(String.format("Php %.2f", itemLineTotal));
                             itemPriceLabel.setFont(new Font("Helvetica Neue", Font.PLAIN, 12));
                             itemPriceLabel.setHorizontalAlignment(SwingConstants.RIGHT);
                             itemSummaryLine.add(itemNameQtyLabel, BorderLayout.WEST);
@@ -396,9 +395,9 @@ public class Cart extends javax.swing.JFrame {
         if (deliveryFeeValueLabel == null) deliveryFeeValueLabel = new JLabel();
         if (totalValueLabel == null) totalValueLabel = new JLabel();
 
-        subtotalValueLabel.setText(String.format("$%.2f", subtotal));
-        deliveryFeeValueLabel.setText(String.format("$%.2f", currentDeliveryFee));
-        totalValueLabel.setText(String.format("$%.2f", total));
+        subtotalValueLabel.setText(String.format("Php %.2f", subtotal));
+        deliveryFeeValueLabel.setText(String.format("Php %.2f", currentDeliveryFee));
+        totalValueLabel.setText(String.format("Php %.2f", total));
 
         jButton1.setEnabled(selectedItemCount > 0);
         if (jButton1.isEnabled()) {
@@ -941,10 +940,10 @@ public class Cart extends javax.swing.JFrame {
 
             String confirmationMessage = String.format(
                 "Please confirm your order:\n\n" +
-                "Subtotal:         $%.2f\n" +
-                "Delivery Fee:  $%.2f\n" +
+                "Subtotal:         Php %.2f\n" +
+                "Delivery Fee:  Php %.2f\n" +
                 "----------------------------------\n" +
-                "Total:              $%.2f\n\n" +
+                "Total:              Php %.2f\n\n" +
                 "Proceed with this order?",
                 subtotal, currentDeliveryFee, finalTotal
             );
@@ -955,7 +954,7 @@ public class Cart extends javax.swing.JFrame {
             );
 
             if (response == JOptionPane.YES_OPTION) {
-                System.out.println("Order placed for total: $" + String.format("%.2f", finalTotal));
+                System.out.println("Order placed for total: Php " + String.format("%.2f", finalTotal));
                 System.out.println("Items ordered:");
 
                 if (cartItems != null) {
@@ -963,7 +962,7 @@ public class Cart extends javax.swing.JFrame {
                     while (iterator.hasNext()) {
                         Map<String, Object> item = iterator.next();
                         if (item != null && (Boolean)item.getOrDefault("selected", false)) {
-                            System.out.println("- " + item.get("name") + " x" + item.get("quantity") + " @ $" + item.get("price"));
+                            System.out.println("- " + item.get("name") + " x" + item.get("quantity") + " @ Php " + item.get("price"));
                             iterator.remove();
                         }
                     }
