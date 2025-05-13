@@ -19,7 +19,6 @@ public class Cart extends javax.swing.JFrame {
     // To keep track of item checkboxes for select all functionality
     private ArrayList<JCheckBox> itemCheckBoxes = new ArrayList<>();
 
-
     private ImageIcon loadImageIcon(String path) {
         try {
             java.net.URL imgURL = getClass().getResource(path);
@@ -159,7 +158,6 @@ public class Cart extends javax.swing.JFrame {
         jPanel3.repaint();
     }
     
-    // Modified to take the whole item map
     private JPanel createCartItemPanel(Map<String, Object> item) {
         String name = (String) item.get("name");
         int quantity = (Integer) item.get("quantity");
@@ -287,8 +285,6 @@ public class Cart extends javax.swing.JFrame {
     }
     
     private void updateItemQuantity(String name, int newQuantity) {
-        // This method might become redundant if quantity is updated directly in createCartItemPanel's spinner listener
-        // For now, ensuring it updates the map is key.
         if (cartItems != null) {
             for (Map<String, Object> item : cartItems) {
                 if (item != null && name.equals(item.get("name"))) {
@@ -335,7 +331,6 @@ public class Cart extends javax.swing.JFrame {
         jLabel6.setText("Delivery Fee: " + String.format("$%.2f", (subtotal > 0 ? DELIVERY_FEE : 0)));
         jLabel7.setText("Total: " + String.format("$%.2f", total));
         
-        //jButton1.setText("Proceed to Order"); 
         jButton1.setBackground(new Color(35, 101, 51));
         jButton1.setForeground(Color.WHITE);
         jButton1.setFont(new Font("Helvetica Neue", Font.BOLD, 16)); 
@@ -369,7 +364,6 @@ public class Cart extends javax.swing.JFrame {
             jCheckBox1.addItemListener(listener);
         }
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -647,6 +641,11 @@ public class Cart extends javax.swing.JFrame {
 
         jCheckBox1.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
         jCheckBox1.setText(" Select all items");
+        jCheckBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCheckBox1ItemStateChanged(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -657,17 +656,21 @@ public class Cart extends javax.swing.JFrame {
 
         jSeparator3.setForeground(new java.awt.Color(35, 101, 51));
 
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel5.setText("Subtotal");
 
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel6.setText("Delivery Fee");
 
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 17)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(35, 101, 51));
         jLabel7.setText("TOTAL");
 
         jButton1.setBackground(new java.awt.Color(35, 101, 51));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 17)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Place Order");
+        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -679,41 +682,40 @@ public class Cart extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(49, 49, 49))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(42, 42, 42))))
+                    .addComponent(jLabel4)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)))
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel7))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addGap(4, 4, 4)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -827,28 +829,19 @@ public class Cart extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    // Action listener for the "Select all items" checkbox
     private void jCheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox1ItemStateChanged
         boolean selectAll = jCheckBox1.isSelected();
         if (cartItems != null) {
-            for (int i = 0; i < cartItems.size(); i++) {
-                Map<String, Object> item = cartItems.get(i);
+            for (Map<String, Object> item : cartItems) {
                 if (item != null) {
                     item.put("selected", selectAll);
-                    if (i < itemCheckBoxes.size()) { // Update individual checkbox UI
-                        JCheckBox currentItemCheckBox = itemCheckBoxes.get(i);
-                        // Prevent listener feedback loop for individual checkboxes
-                        ItemListener[] itemListeners = currentItemCheckBox.getItemListeners();
-                        for(ItemListener il : itemListeners) currentItemCheckBox.removeItemListener(il);
-                        
-                        currentItemCheckBox.setSelected(selectAll);
-
-                        for(ItemListener il : itemListeners) currentItemCheckBox.addItemListener(il);
-                    }
                 }
             }
+            // Update all individual checkboxes
+            for (JCheckBox checkBox : itemCheckBoxes) {
+                checkBox.setSelected(selectAll);
+            }
         }
-        // displayCartItems(); // Re-rendering the whole list will also work but might be slower
         calculateOrderSummary();
     }//GEN-LAST:event_jCheckBox1ItemStateChanged
 
