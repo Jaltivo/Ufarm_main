@@ -50,6 +50,18 @@ public class PlantBasketFarm extends javax.swing.JFrame {
                 FeedbackMouseClicked(evt); // Call custom method
             }
         }); 
+    
+        Farm.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FarmMouseClicked(evt); // Call custom method
+            }
+        }); 
+    }
+    
+    private void FarmMouseClicked(java.awt.event.MouseEvent evt) {
+        new Farm().setVisible(true);  
+        this.dispose();
     }
     
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
