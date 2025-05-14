@@ -37,21 +37,20 @@ public class Farm extends javax.swing.JFrame {
             }
         });
         
-        Cart.addMouseListener(new java.awt.event.MouseAdapter() {
+        Cart1.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CartMouseClicked(evt); // Call custom method
             }
         });
         
-        Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
+        Feedback1.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FeedbackMouseClicked(evt); // Call custom method
             }
-        }); 
-        
-        
+        });
+               
         Page2.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -137,8 +136,8 @@ public class Farm extends javax.swing.JFrame {
         FarmPanel = new javax.swing.JPanel();
         Farm = new javax.swing.JLabel();
         FeedbackPanel = new javax.swing.JPanel();
-        Feedback = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        Cart1 = new javax.swing.JLabel();
+        MyLove = new javax.swing.JLabel();
         FeedbackPanel1 = new javax.swing.JPanel();
         Feedback1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -279,9 +278,9 @@ public class Farm extends javax.swing.JFrame {
 
         FeedbackPanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Feedback.setForeground(new java.awt.Color(255, 255, 255));
-        Feedback.setText("Cart");
+        Cart1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Cart1.setForeground(new java.awt.Color(255, 255, 255));
+        Cart1.setText("Cart");
 
         javax.swing.GroupLayout FeedbackPanelLayout = new javax.swing.GroupLayout(FeedbackPanel);
         FeedbackPanel.setLayout(FeedbackPanelLayout);
@@ -289,20 +288,20 @@ public class Farm extends javax.swing.JFrame {
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FeedbackPanelLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addComponent(Feedback)
+                .addComponent(Cart1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         FeedbackPanelLayout.setVerticalGroup(
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Feedback)
+                .addComponent(Cart1)
                 .addGap(157, 157, 157))
         );
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Agco, Jasmine Jane @2025");
+        MyLove.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        MyLove.setForeground(new java.awt.Color(204, 204, 204));
+        MyLove.setText("Agco, Jasmine Jane @2025");
 
         FeedbackPanel1.setBackground(new java.awt.Color(33, 113, 0));
 
@@ -347,7 +346,7 @@ public class Farm extends javax.swing.JFrame {
                 .addGap(0, 27, Short.MAX_VALUE))
             .addGroup(DashLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(MyLove)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(FeedbackPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -371,7 +370,7 @@ public class Farm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FeedbackPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 41, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(MyLove)
                 .addContainerGap())
         );
 
@@ -838,15 +837,16 @@ public class Farm extends javax.swing.JFrame {
     private javax.swing.JLabel Acc;
     private javax.swing.JPanel AccPanel;
     private javax.swing.JLabel Cart;
+    private javax.swing.JLabel Cart1;
     private javax.swing.JPanel Dash;
     private javax.swing.JLabel Farm;
     private javax.swing.JPanel FarmPanel;
-    private javax.swing.JLabel Feedback;
     private javax.swing.JLabel Feedback1;
     private javax.swing.JPanel FeedbackPanel;
     private javax.swing.JPanel FeedbackPanel1;
     private javax.swing.JLabel Home;
     private javax.swing.JPanel HomePanel;
+    private javax.swing.JLabel MyLove;
     private javax.swing.JLabel Next;
     private javax.swing.JLabel Page1;
     private javax.swing.JLabel Page2;
@@ -862,7 +862,6 @@ public class Farm extends javax.swing.JFrame {
     private javax.swing.JButton Visit4;
     private javax.swing.JButton Visit5;
     private javax.swing.JButton Visit6;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
