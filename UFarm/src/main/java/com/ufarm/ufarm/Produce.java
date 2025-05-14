@@ -43,6 +43,13 @@ public class Produce extends javax.swing.JFrame {
             }
         });
         
+        Farm.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            FarmMouseClicked(evt);
+        }
+        });
+        
         Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -133,6 +140,11 @@ public class Produce extends javax.swing.JFrame {
     
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
         new Home().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void FarmMouseClicked(java.awt.event.MouseEvent evt) {
+        new Farm().setVisible(true);  
         this.dispose();
     }
     

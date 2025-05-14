@@ -15,7 +15,106 @@ public class Farm extends javax.swing.JFrame {
      */
     public Farm() {
         initComponents();
+        
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Acc.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AccMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Produce.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProduceMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Cart.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CartMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Feedback.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FeedbackMouseClicked(evt); // Call custom method
+            }
+        }); 
+        
+        
+        Page2.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Page2MouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Page3.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Page3MouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Next.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NextMouseClicked(evt); // Call custom method
+            }
+        });
     }
+    
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
+        new Home().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void AccMouseClicked(java.awt.event.MouseEvent evt) {
+        new Login().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void ProduceMouseClicked(java.awt.event.MouseEvent evt) {
+        new Produce().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void CartMouseClicked(java.awt.event.MouseEvent evt) {
+        new Cart().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
+        new Feedback().setVisible(true);  
+        this.dispose();
+    }
+        
+    private void Page2MouseClicked(java.awt.event.MouseEvent evt) {
+        new Farm2().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void Page3MouseClicked(java.awt.event.MouseEvent evt) {
+        new Produce3().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void NextMouseClicked(java.awt.event.MouseEvent evt) {
+        new Farm3().setVisible(true);  
+        this.dispose();
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,35 +147,35 @@ public class Farm extends javax.swing.JFrame {
         Search = new javax.swing.JLabel();
         Cart = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        Prev = new javax.swing.JLabel();
+        Next = new javax.swing.JLabel();
         Page1 = new javax.swing.JLabel();
         Page2 = new javax.swing.JLabel();
         Page3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Visit1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        Visit2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        Visit3 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        Visit5 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        Visit4 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        Visit6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -319,13 +418,13 @@ public class Farm extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("  <");
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Prev.setForeground(new java.awt.Color(255, 255, 255));
+        Prev.setText("  <");
+        Prev.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText(" > ");
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Next.setForeground(new java.awt.Color(255, 255, 255));
+        Next.setText(" > ");
+        Next.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         Page1.setBackground(new java.awt.Color(102, 51, 0));
         Page1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -346,7 +445,7 @@ public class Farm extends javax.swing.JFrame {
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Prev, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(Page1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
@@ -354,19 +453,19 @@ public class Farm extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(Page3)
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Next, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Prev, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Page1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Page2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(Page3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Next, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(35, 101, 51));
@@ -375,12 +474,12 @@ public class Farm extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Harvestita");
 
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(35, 101, 51));
-        jButton1.setText("VISIT");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Visit1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        Visit1.setForeground(new java.awt.Color(35, 101, 51));
+        Visit1.setText("VISIT");
+        Visit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Visit1ActionPerformed(evt);
             }
         });
 
@@ -395,7 +494,7 @@ public class Farm extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Visit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -406,7 +505,7 @@ public class Farm extends javax.swing.JFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(Visit1)
                 .addGap(1, 1, 1))
         );
 
@@ -416,12 +515,12 @@ public class Farm extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("MetroAni");
 
-        jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(35, 101, 51));
-        jButton2.setText("VISIT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Visit2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        Visit2.setForeground(new java.awt.Color(35, 101, 51));
+        Visit2.setText("VISIT");
+        Visit2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Visit2ActionPerformed(evt);
             }
         });
 
@@ -436,7 +535,7 @@ public class Farm extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Visit2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -447,7 +546,7 @@ public class Farm extends javax.swing.JFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(Visit2)
                 .addGap(1, 1, 1))
         );
 
@@ -457,12 +556,12 @@ public class Farm extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("VegaVerticals");
 
-        jButton3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(35, 101, 51));
-        jButton3.setText("VISIT");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Visit3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        Visit3.setForeground(new java.awt.Color(35, 101, 51));
+        Visit3.setText("VISIT");
+        Visit3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                Visit3ActionPerformed(evt);
             }
         });
 
@@ -477,7 +576,7 @@ public class Farm extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Visit3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -488,7 +587,7 @@ public class Farm extends javax.swing.JFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(Visit3)
                 .addGap(1, 1, 1))
         );
 
@@ -498,12 +597,12 @@ public class Farm extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Munting Taniman");
 
-        jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(35, 101, 51));
-        jButton5.setText("VISIT");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Visit5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        Visit5.setForeground(new java.awt.Color(35, 101, 51));
+        Visit5.setText("VISIT");
+        Visit5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                Visit5ActionPerformed(evt);
             }
         });
 
@@ -518,7 +617,7 @@ public class Farm extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Visit5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -529,7 +628,7 @@ public class Farm extends javax.swing.JFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(Visit5)
                 .addGap(1, 1, 1))
         );
 
@@ -539,12 +638,12 @@ public class Farm extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("BahayAnihan");
 
-        jButton4.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(35, 101, 51));
-        jButton4.setText("VISIT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Visit4.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        Visit4.setForeground(new java.awt.Color(35, 101, 51));
+        Visit4.setText("VISIT");
+        Visit4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                Visit4ActionPerformed(evt);
             }
         });
 
@@ -559,7 +658,7 @@ public class Farm extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Visit4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -570,7 +669,7 @@ public class Farm extends javax.swing.JFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(Visit4)
                 .addGap(1, 1, 1))
         );
 
@@ -580,12 +679,12 @@ public class Farm extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Bintana Greens");
 
-        jButton6.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(35, 101, 51));
-        jButton6.setText("VISIT");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        Visit6.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        Visit6.setForeground(new java.awt.Color(35, 101, 51));
+        Visit6.setText("VISIT");
+        Visit6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                Visit6ActionPerformed(evt);
             }
         });
 
@@ -600,7 +699,7 @@ public class Farm extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Visit6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -611,7 +710,7 @@ public class Farm extends javax.swing.JFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(Visit6)
                 .addGap(1, 1, 1))
         );
 
@@ -669,29 +768,36 @@ public class Farm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void Visit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visit1ActionPerformed
+        new HarvestitaFarm().setVisible(true);  
+        this.dispose();
+        
+    }//GEN-LAST:event_Visit1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void Visit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visit2ActionPerformed
+        new MetroAniFarm().setVisible(true);  
+        this.dispose();
+    }//GEN-LAST:event_Visit2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void Visit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visit3ActionPerformed
+        new VegaVerticalsFarm().setVisible(true);  
+        this.dispose();
+    }//GEN-LAST:event_Visit3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void Visit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visit4ActionPerformed
+        new BahayAnihanFarm().setVisible(true);  
+        this.dispose();
+    }//GEN-LAST:event_Visit4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void Visit5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visit5ActionPerformed
+        new MuntingTanimanFarm().setVisible(true);  
+        this.dispose();
+    }//GEN-LAST:event_Visit5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void Visit6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visit6ActionPerformed
+        new BintanaGreensFarm().setVisible(true);  
+        this.dispose();
+    }//GEN-LAST:event_Visit6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -741,19 +847,21 @@ public class Farm extends javax.swing.JFrame {
     private javax.swing.JPanel FeedbackPanel1;
     private javax.swing.JLabel Home;
     private javax.swing.JPanel HomePanel;
+    private javax.swing.JLabel Next;
     private javax.swing.JLabel Page1;
     private javax.swing.JLabel Page2;
     private javax.swing.JLabel Page3;
+    private javax.swing.JLabel Prev;
     private javax.swing.JLabel Produce;
     private javax.swing.JPanel ProducePanel;
     private javax.swing.JLabel Search;
     private javax.swing.JLabel Title;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton Visit1;
+    private javax.swing.JButton Visit2;
+    private javax.swing.JButton Visit3;
+    private javax.swing.JButton Visit4;
+    private javax.swing.JButton Visit5;
+    private javax.swing.JButton Visit6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -765,8 +873,6 @@ public class Farm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

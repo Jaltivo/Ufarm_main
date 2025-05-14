@@ -27,6 +27,8 @@ public class Cart extends javax.swing.JFrame {
 
     private javax.swing.JPanel selectedItemsDisplayPanel;
     private javax.swing.JScrollPane itemsSummaryScrollPane;
+    
+    
 
     private ImageIcon loadImageIcon(String path) {
         try {
@@ -128,10 +130,11 @@ public class Cart extends javax.swing.JFrame {
                 dispose();
             }
         });
+        
         Farm.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
+        @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                 JOptionPane.showMessageDialog(Cart.this, "Farm page not implemented yet.");
+                FarmMouseClicked(evt);
             }
         });
         Feedback1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -446,6 +449,12 @@ public class Cart extends javax.swing.JFrame {
              if (listener != null) jCheckBox1.addItemListener(listener);
         }
     }
+    
+    private void FarmMouseClicked(java.awt.event.MouseEvent evt) {
+        new Farm().setVisible(true);  
+        this.dispose();
+    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

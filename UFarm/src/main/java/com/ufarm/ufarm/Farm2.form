@@ -500,7 +500,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jLabel5" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="Prev" min="-2" pref="22" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="Page1" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -508,14 +508,14 @@
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="Page3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jLabel6" min="-2" pref="24" max="-2" attributes="0"/>
+                  <Component id="Next" min="-2" pref="24" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+              <Component id="Prev" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Page1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
@@ -524,12 +524,12 @@
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Component id="Page3" alignment="1" max="32767" attributes="0"/>
-              <Component id="jLabel6" alignment="1" max="32767" attributes="0"/>
+              <Component id="Next" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="Prev">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -544,7 +544,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="Next">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -633,7 +633,7 @@
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jButton6" alignment="1" max="32767" attributes="0"/>
+                      <Component id="Visit1" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -647,7 +647,7 @@
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Component id="jLabel13" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                  <Component id="Visit1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -667,7 +667,7 @@
             <Property name="text" type="java.lang.String" value="FreshLoop"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="Visit1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="14" style="1"/>
@@ -678,7 +678,7 @@
             <Property name="text" type="java.lang.String" value="VISIT"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Visit1ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -701,7 +701,7 @@
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jButton7" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Visit2" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -715,7 +715,7 @@
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Component id="jLabel14" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                  <Component id="Visit2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -735,7 +735,7 @@
             <Property name="text" type="java.lang.String" value="Plant Basket"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="Visit2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="14" style="1"/>
@@ -746,7 +746,7 @@
             <Property name="text" type="java.lang.String" value="VISIT"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Visit2ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -769,7 +769,7 @@
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jButton8" alignment="1" max="32767" attributes="0"/>
+                      <Component id="Visit3" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -783,7 +783,7 @@
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Component id="jLabel15" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                  <Component id="Visit3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -803,7 +803,7 @@
             <Property name="text" type="java.lang.String" value="VertiGrow"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="Visit3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="14" style="1"/>
@@ -814,7 +814,7 @@
             <Property name="text" type="java.lang.String" value="VISIT"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Visit3ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -837,7 +837,7 @@
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jButton9" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Visit4" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -851,7 +851,7 @@
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Component id="jLabel16" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton9" min="-2" max="-2" attributes="0"/>
+                  <Component id="Visit4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -871,7 +871,7 @@
             <Property name="text" type="java.lang.String" value="TowerTaniman"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton9">
+        <Component class="javax.swing.JButton" name="Visit4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="14" style="1"/>
@@ -882,7 +882,7 @@
             <Property name="text" type="java.lang.String" value="VISIT"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Visit4ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -905,7 +905,7 @@
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jButton10" alignment="1" max="32767" attributes="0"/>
+                      <Component id="Visit5" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -919,7 +919,7 @@
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Component id="jLabel17" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                  <Component id="Visit5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -939,7 +939,7 @@
             <Property name="text" type="java.lang.String" value="LeafLevel Farm"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton10">
+        <Component class="javax.swing.JButton" name="Visit5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="14" style="1"/>
@@ -950,7 +950,7 @@
             <Property name="text" type="java.lang.String" value="VISIT"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Visit5ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -973,7 +973,7 @@
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jButton11" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Visit6" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -987,7 +987,7 @@
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Component id="jLabel18" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                  <Component id="Visit6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -1007,7 +1007,7 @@
             <Property name="text" type="java.lang.String" value="RoofCrop Co."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton11">
+        <Component class="javax.swing.JButton" name="Visit6">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="14" style="1"/>
@@ -1018,7 +1018,7 @@
             <Property name="text" type="java.lang.String" value="VISIT"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Visit6ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

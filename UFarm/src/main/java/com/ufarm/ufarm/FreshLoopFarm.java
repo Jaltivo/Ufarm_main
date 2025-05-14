@@ -15,6 +15,65 @@ public class FreshLoopFarm extends javax.swing.JFrame {
      */
     public FreshLoopFarm() {
         initComponents();
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Acc.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AccMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Produce.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProduceMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Cart.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CartMouseClicked(evt); // Call custom method
+            }
+        });
+        
+        Cart.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FeedbackMouseClicked(evt); // Call custom method
+            }
+        }); 
+    }
+    
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
+        new Home().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void AccMouseClicked(java.awt.event.MouseEvent evt) {
+        new Login().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void ProduceMouseClicked(java.awt.event.MouseEvent evt) {
+        new Produce().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void CartMouseClicked(java.awt.event.MouseEvent evt) {
+        new Cart().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
+        new Feedback().setVisible(true);  
+        this.dispose();
     }
 
     /**
@@ -38,10 +97,10 @@ public class FreshLoopFarm extends javax.swing.JFrame {
         FarmPanel = new javax.swing.JPanel();
         Farm = new javax.swing.JLabel();
         FeedbackPanel = new javax.swing.JPanel();
-        Feedback = new javax.swing.JLabel();
+        Cart = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         FeedbackPanel1 = new javax.swing.JPanel();
-        Feedback1 = new javax.swing.JLabel();
+        Feedback = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -158,9 +217,9 @@ public class FreshLoopFarm extends javax.swing.JFrame {
 
         FeedbackPanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Feedback.setForeground(new java.awt.Color(255, 255, 255));
-        Feedback.setText("Cart");
+        Cart.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Cart.setForeground(new java.awt.Color(255, 255, 255));
+        Cart.setText("Cart");
 
         javax.swing.GroupLayout FeedbackPanelLayout = new javax.swing.GroupLayout(FeedbackPanel);
         FeedbackPanel.setLayout(FeedbackPanelLayout);
@@ -168,14 +227,14 @@ public class FreshLoopFarm extends javax.swing.JFrame {
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FeedbackPanelLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addComponent(Feedback)
+                .addComponent(Cart)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         FeedbackPanelLayout.setVerticalGroup(
             FeedbackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Feedback)
+                .addComponent(Cart)
                 .addGap(157, 157, 157))
         );
 
@@ -185,9 +244,9 @@ public class FreshLoopFarm extends javax.swing.JFrame {
 
         FeedbackPanel1.setBackground(new java.awt.Color(33, 113, 0));
 
-        Feedback1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        Feedback1.setForeground(new java.awt.Color(255, 255, 255));
-        Feedback1.setText("Feedback");
+        Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Feedback.setForeground(new java.awt.Color(255, 255, 255));
+        Feedback.setText("Feedback");
 
         javax.swing.GroupLayout FeedbackPanel1Layout = new javax.swing.GroupLayout(FeedbackPanel1);
         FeedbackPanel1.setLayout(FeedbackPanel1Layout);
@@ -195,14 +254,14 @@ public class FreshLoopFarm extends javax.swing.JFrame {
             FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Feedback1)
+                .addComponent(Feedback)
                 .addGap(53, 53, 53))
         );
         FeedbackPanel1Layout.setVerticalGroup(
             FeedbackPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FeedbackPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Feedback1)
+                .addComponent(Feedback)
                 .addGap(157, 157, 157))
         );
 
@@ -483,11 +542,11 @@ public class FreshLoopFarm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Acc;
     private javax.swing.JPanel AccPanel;
+    private javax.swing.JLabel Cart;
     private javax.swing.JPanel Dash;
     private javax.swing.JLabel Farm;
     private javax.swing.JPanel FarmPanel;
     private javax.swing.JLabel Feedback;
-    private javax.swing.JLabel Feedback1;
     private javax.swing.JPanel FeedbackPanel;
     private javax.swing.JPanel FeedbackPanel1;
     private javax.swing.JLabel Home;
