@@ -27,6 +27,8 @@ public class Produce2 extends javax.swing.JFrame {
         initComponents(); // This will initialize the components
 
         // Navigation Listeners
+        
+        
         Page1.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -74,7 +76,8 @@ public class Produce2 extends javax.swing.JFrame {
         Farm.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JOptionPane.showMessageDialog(Produce2.this, "Farm page not implemented yet.");
+                new Farm().setVisible(true);
+                dispose();
             }
         });
 
@@ -144,6 +147,26 @@ public class Produce2 extends javax.swing.JFrame {
         jButton6.addActionListener(evt -> addToCart("Spinach", (Integer)jSpinner6.getValue(), (ImageIcon)jLabel8.getIcon()));
 
         setLocationRelativeTo(null);
+    }
+    
+    private void AccMouseClicked(java.awt.event.MouseEvent evt) {
+        new Login().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
+        new Home().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void FarmMouseClicked(java.awt.event.MouseEvent evt) {
+        new Farm().setVisible(true);  
+        this.dispose();
+    }
+    
+    private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
+        new Feedback().setVisible(true);  
+        this.dispose();
     }
 
     private void Page1MouseClicked(java.awt.event.MouseEvent evt) {

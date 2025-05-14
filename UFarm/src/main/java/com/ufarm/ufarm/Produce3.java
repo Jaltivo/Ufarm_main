@@ -45,9 +45,9 @@ public class Produce3 extends javax.swing.JFrame {
         Farm.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                // new Farm().setVisible(true); // Assuming Farm class exists
-                // dispose();
-                JOptionPane.showMessageDialog(Produce3.this, "Farm page not implemented yet.");
+                new Farm().setVisible(true); // Assuming Farm class exists
+                dispose();
+                
             }
         });
         CartMenu.addMouseListener(new java.awt.event.MouseAdapter() {
