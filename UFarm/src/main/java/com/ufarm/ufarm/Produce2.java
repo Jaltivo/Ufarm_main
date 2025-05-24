@@ -27,8 +27,6 @@ public class Produce2 extends javax.swing.JFrame {
         initComponents(); // This will initialize the components
 
         // Navigation Listeners
-        
-        
         Page1.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -76,8 +74,7 @@ public class Produce2 extends javax.swing.JFrame {
         Farm.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                new Farm().setVisible(true);
-                dispose();
+                JOptionPane.showMessageDialog(Produce2.this, "Farm page not implemented yet.");
             }
         });
 
@@ -147,26 +144,6 @@ public class Produce2 extends javax.swing.JFrame {
         jButton6.addActionListener(evt -> addToCart("Spinach", (Integer)jSpinner6.getValue(), (ImageIcon)jLabel8.getIcon()));
 
         setLocationRelativeTo(null);
-    }
-    
-    private void AccMouseClicked(java.awt.event.MouseEvent evt) {
-        new Login().setVisible(true);  
-        this.dispose();
-    }
-    
-    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {
-        new Home().setVisible(true);  
-        this.dispose();
-    }
-    
-    private void FarmMouseClicked(java.awt.event.MouseEvent evt) {
-        new Farm().setVisible(true);  
-        this.dispose();
-    }
-    
-    private void FeedbackMouseClicked(java.awt.event.MouseEvent evt) {
-        new Feedback().setVisible(true);  
-        this.dispose();
     }
 
     private void Page1MouseClicked(java.awt.event.MouseEvent evt) {
@@ -238,12 +215,12 @@ public class Produce2 extends javax.swing.JFrame {
         }
         double price = 0.0;
         switch(itemName) {
-            case "GreenBeans": price = 40.00; break;
-            case "Ginger":     price = 95.00; break;
-            case "Onion":      price = 80.00; break;
-            case "Chili":      price = 350.00; break;
-            case "Carrot":     price = 120.00; break;
-            case "Spinach":    price = 75.00; break;
+            case "GreenBeans": price = 60.00; break;
+            case "Ginger":     price = 90.00; break;
+            case "Onion":      price = 120.00; break;
+            case "Chili":      price = 450.00; break;
+            case "Carrot":     price = 110.00; break;
+            case "Spinach":    price = 80.00; break;
             default:
                 JOptionPane.showMessageDialog(this, "Price for " + itemName + " not found.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -638,7 +615,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("GreenBeans   Php 40.00");
+        jLabel9.setText("GreenBeans    Php 60.00");
 
         jButton1.setBackground(new java.awt.Color(35, 101, 51));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -683,7 +660,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Ginger             Php 95.00");
+        jLabel12.setText("Ginger            Php 90.00");
 
         jButton2.setBackground(new java.awt.Color(35, 101, 51));
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -728,7 +705,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Onion              Php 80.00");
+        jLabel10.setText("Onion           Php 120.00");
 
         jButton3.setBackground(new java.awt.Color(35, 101, 51));
         jButton3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -773,7 +750,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Carrot            Php 120.00");
+        jLabel13.setText("Carrot           Php 110.00");
 
         jButton5.setBackground(new java.awt.Color(35, 101, 51));
         jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -818,7 +795,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Chili               Php 350.00");
+        jLabel11.setText("Chili              Php 450.00");
 
         jButton4.setBackground(new java.awt.Color(35, 101, 51));
         jButton4.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -863,7 +840,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Spinach          Php 75.00");
+        jLabel14.setText("Spinach           Php 80.00");
 
         jButton6.setBackground(new java.awt.Color(35, 101, 51));
         jButton6.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N

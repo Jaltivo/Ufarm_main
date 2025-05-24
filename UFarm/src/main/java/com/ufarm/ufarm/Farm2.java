@@ -398,6 +398,10 @@ public class Farm2 extends javax.swing.JFrame {
             }
         });
 
+        Search.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\search.png")); // NOI18N
+
+        Cart.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\grocery-store.png")); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -405,7 +409,7 @@ public class Farm2 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Search)
@@ -481,6 +485,8 @@ public class Farm2 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(35, 101, 51));
 
+        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Farm7.jpg")); // NOI18N
+
         jLabel8.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("FreshLoop");
@@ -521,6 +527,8 @@ public class Farm2 extends javax.swing.JFrame {
         );
 
         jPanel3.setBackground(new java.awt.Color(35, 101, 51));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Farm8.jpeg")); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -563,6 +571,8 @@ public class Farm2 extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(35, 101, 51));
 
+        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Farm9.jpg")); // NOI18N
+
         jLabel10.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("VertiGrow");
@@ -603,6 +613,8 @@ public class Farm2 extends javax.swing.JFrame {
         );
 
         jPanel5.setBackground(new java.awt.Color(35, 101, 51));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Farm10.jpg")); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -645,6 +657,8 @@ public class Farm2 extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(35, 101, 51));
 
+        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Farm11.jpg")); // NOI18N
+
         jLabel12.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("LeafLevel Farm");
@@ -685,6 +699,8 @@ public class Farm2 extends javax.swing.JFrame {
         );
 
         jPanel7.setBackground(new java.awt.Color(35, 101, 51));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Farm12.jpg")); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));

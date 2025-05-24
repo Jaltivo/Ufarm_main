@@ -119,13 +119,20 @@ public class Home extends    javax.swing.JFrame {
         Featured = new javax.swing.JLabel();
         Seasonal = new javax.swing.JLabel();
         Fea1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         Fea3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         Sea1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         Sea2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         Fea5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         Sea6 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         Sea7 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -366,95 +373,151 @@ public class Home extends    javax.swing.JFrame {
 
         Fea1.setBackground(new java.awt.Color(35, 101, 51));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\fea1 (2).jpg")); // NOI18N
+
         javax.swing.GroupLayout Fea1Layout = new javax.swing.GroupLayout(Fea1);
         Fea1.setLayout(Fea1Layout);
         Fea1Layout.setHorizontalGroup(
             Fea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
+            .addGroup(Fea1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         Fea1Layout.setVerticalGroup(
             Fea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(Fea1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Fea3.setBackground(new java.awt.Color(35, 101, 51));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\fea3 (2).jpg")); // NOI18N
 
         javax.swing.GroupLayout Fea3Layout = new javax.swing.GroupLayout(Fea3);
         Fea3.setLayout(Fea3Layout);
         Fea3Layout.setHorizontalGroup(
             Fea3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
+            .addGroup(Fea3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         Fea3Layout.setVerticalGroup(
             Fea3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(Fea3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Sea1.setBackground(new java.awt.Color(35, 101, 51));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\sea1 (1).jpg")); // NOI18N
 
         javax.swing.GroupLayout Sea1Layout = new javax.swing.GroupLayout(Sea1);
         Sea1.setLayout(Sea1Layout);
         Sea1Layout.setHorizontalGroup(
             Sea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 137, Short.MAX_VALUE)
+            .addGroup(Sea1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         Sea1Layout.setVerticalGroup(
             Sea1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(Sea1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Sea2.setBackground(new java.awt.Color(35, 101, 51));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\sea2 (1).jpg")); // NOI18N
 
         javax.swing.GroupLayout Sea2Layout = new javax.swing.GroupLayout(Sea2);
         Sea2.setLayout(Sea2Layout);
         Sea2Layout.setHorizontalGroup(
             Sea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 137, Short.MAX_VALUE)
+            .addGroup(Sea2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         Sea2Layout.setVerticalGroup(
             Sea2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(Sea2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jSeparator2.setForeground(new java.awt.Color(35, 101, 51));
 
         Fea5.setBackground(new java.awt.Color(35, 101, 51));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\fea2 (2).jpg")); // NOI18N
+
         javax.swing.GroupLayout Fea5Layout = new javax.swing.GroupLayout(Fea5);
         Fea5.setLayout(Fea5Layout);
         Fea5Layout.setHorizontalGroup(
             Fea5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 147, Short.MAX_VALUE)
+            .addGroup(Fea5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         Fea5Layout.setVerticalGroup(
             Fea5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(Fea5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Sea6.setBackground(new java.awt.Color(35, 101, 51));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\sea3 (1).jpg")); // NOI18N
 
         javax.swing.GroupLayout Sea6Layout = new javax.swing.GroupLayout(Sea6);
         Sea6.setLayout(Sea6Layout);
         Sea6Layout.setHorizontalGroup(
             Sea6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 137, Short.MAX_VALUE)
+            .addGroup(Sea6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         Sea6Layout.setVerticalGroup(
             Sea6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(Sea6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Sea7.setBackground(new java.awt.Color(35, 101, 51));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\sea4 (1).jpg")); // NOI18N
 
         javax.swing.GroupLayout Sea7Layout = new javax.swing.GroupLayout(Sea7);
         Sea7.setLayout(Sea7Layout);
         Sea7Layout.setHorizontalGroup(
             Sea7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 137, Short.MAX_VALUE)
+            .addGroup(Sea7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         Sea7Layout.setVerticalGroup(
             Sea7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(Sea7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout BGLayout = new javax.swing.GroupLayout(BG);
@@ -608,6 +671,13 @@ public class Home extends    javax.swing.JFrame {
     private javax.swing.JLabel Seasonal;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel Welcome;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables

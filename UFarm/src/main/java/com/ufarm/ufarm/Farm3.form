@@ -426,7 +426,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="236" max="32767" attributes="0"/>
+                  <EmptySpace pref="234" max="32767" attributes="0"/>
                   <Component id="jTextField1" min="-2" pref="214" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="Search" min="-2" max="-2" attributes="0"/>
@@ -480,8 +480,18 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Search">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\search.png"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Cart">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\Admin\Documents\NetBeansProjects\Ufarm_main\UFarm\src\main\java\com\ufarm\ufarm\images\grocery-store.png"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
