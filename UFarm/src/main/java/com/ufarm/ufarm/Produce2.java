@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs: 
+ * Click nbfs: 
  */
 package com.ufarm.ufarm;
 
@@ -17,16 +17,16 @@ import java.util.Map;
 
 public class Produce2 extends javax.swing.JFrame {
 
-    // Cart items specific to Produce2 page
+     
     private static ArrayList<Map<String, Object>> cartItems = new ArrayList<>();
 
     /**
      * Creates new form Produce2
      */
     public Produce2() {
-        initComponents(); // This will initialize the components
+        initComponents();  
 
-        // Navigation Listeners
+         
         Page1.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -66,7 +66,7 @@ public class Produce2 extends javax.swing.JFrame {
         Acc.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                new Login().setVisible(true); // Or your account/logout page
+                new Login().setVisible(true);  
                 dispose();
             }
         });
@@ -94,18 +94,18 @@ public class Produce2 extends javax.swing.JFrame {
             }
         });
 
-        // Styling for current page indication (Produce section, Page 2)
-        ProducePanel.setBackground(new Color(102, 51, 0)); // Highlight ProducePanel as current section
-        Produce.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // Bold "Produce" label
-        Produce.setForeground(new java.awt.Color(255, 255, 200)); // Slightly different color for current menu item
+         
+        ProducePanel.setBackground(new Color(102, 51, 0));  
+        Produce.setFont(new java.awt.Font("Helvetica Neue", 1, 24));  
+        Produce.setForeground(new java.awt.Color(255, 255, 200));  
         
-        Page2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // Bold "Page 2" label
-        // Page2.setForeground(new java.awt.Color(255, 255, 200)); // Example: highlight color if needed, already white
+        Page2.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
+         
 
-        // Hover Effects for Labels (avoiding current page elements)
+         
         setupLabelHoverEffect(Home, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
         setupLabelHoverEffect(Acc, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
-        // Produce label is current, hover handled by not being in this general setup or specific conditions
+         
         setupLabelHoverEffect(Farm, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
         setupLabelHoverEffect(CartMenu, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
         setupLabelHoverEffect(Feedback, java.awt.Color.WHITE, new java.awt.Color(220, 220, 100));
@@ -113,29 +113,29 @@ public class Produce2 extends javax.swing.JFrame {
         setupLabelHoverEffect(Prev, java.awt.Color.WHITE, new java.awt.Color(200, 200, 200));
         setupLabelHoverEffect(Next, java.awt.Color.WHITE, new java.awt.Color(200, 200, 200));
         setupLabelHoverEffect(Page1, java.awt.Color.WHITE, new java.awt.Color(200, 200, 200));
-        // Page2 label is current, hover handled by not being in this general setup
+         
         setupLabelHoverEffect(Page3, java.awt.Color.WHITE, new java.awt.Color(200, 200, 200));
         
 
-        // Hover Effects for Panels (avoiding current page panel)
+         
         setupPanelHoverEffects(HomePanel, new Color(33, 113, 0), new Color(45, 125, 10));
         setupPanelHoverEffects(AccPanel, new Color(33, 113, 0), new Color(45, 125, 10));
-        // ProducePanel is current, hover handled by not being in this general setup
+         
         setupPanelHoverEffects(FarmPanel, new Color(33, 113, 0), new Color(45, 125, 10));
         setupPanelHoverEffects(CartPanel, new Color(33, 113, 0), new Color(45, 125, 10));
         setupPanelHoverEffects(FeedbackPanel, new Color(33,113,0), new Color(45,125,10));
 
         Color productNormalColor = new Color(35, 101, 51);
         Color productHoverColor = new Color(45, 115, 61);
-        setupPanelHoverEffects(jPanel14, productNormalColor, productHoverColor); // GreenBeans
-        setupPanelHoverEffects(jPanel15, productNormalColor, productHoverColor); // Ginger
-        setupPanelHoverEffects(jPanel16, productNormalColor, productHoverColor); // Onion
-        setupPanelHoverEffects(jPanel17, productNormalColor, productHoverColor); // Carrot
-        setupPanelHoverEffects(jPanel18, productNormalColor, productHoverColor); // Chili
-        setupPanelHoverEffects(jPanel19, productNormalColor, productHoverColor); // Spinach
+        setupPanelHoverEffects(jPanel14, productNormalColor, productHoverColor);  
+        setupPanelHoverEffects(jPanel15, productNormalColor, productHoverColor);  
+        setupPanelHoverEffects(jPanel16, productNormalColor, productHoverColor);  
+        setupPanelHoverEffects(jPanel17, productNormalColor, productHoverColor);  
+        setupPanelHoverEffects(jPanel18, productNormalColor, productHoverColor);  
+        setupPanelHoverEffects(jPanel19, productNormalColor, productHoverColor);  
 
-        // Add action listeners for Add to Cart buttons using lambdas
-        // These are the correct listeners and ensure no others are attached in initComponents.
+         
+         
         jButton1.addActionListener(evt -> addToCart("GreenBeans", (Integer)jSpinner1.getValue(), (ImageIcon)jLabel3.getIcon()));
         jButton2.addActionListener(evt -> addToCart("Ginger", (Integer)jSpinner2.getValue(), (ImageIcon)jLabel6.getIcon()));
         jButton3.addActionListener(evt -> addToCart("Onion", (Integer)jSpinner3.getValue(), (ImageIcon)jLabel4.getIcon()));
@@ -170,7 +170,7 @@ public class Produce2 extends javax.swing.JFrame {
         panel.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                // Avoid changing current page panel (ProducePanel) color on hover
+                 
                 if (panel != ProducePanel) { 
                    panel.setBackground(hoverColor);
                 }
@@ -178,7 +178,7 @@ public class Produce2 extends javax.swing.JFrame {
             }
             @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                 if (panel != ProducePanel) { // Only revert if it's not the current page panel
+                 if (panel != ProducePanel) {  
                     panel.setBackground(normalColor);
                  }
                 panel.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
@@ -187,7 +187,7 @@ public class Produce2 extends javax.swing.JFrame {
     }
 
     private void setupLabelHoverEffect(javax.swing.JLabel label, Color normalColor, Color hoverColor) {
-        // Avoid changing color for current "Produce" menu label and "Page2" pagination label
+         
         boolean isCurrentPageElement = (label == Produce || label == Page2);
 
         label.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -251,7 +251,7 @@ public class Produce2 extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+     
     private void initComponents() {
 
         Dash = new javax.swing.JPanel();
@@ -317,13 +317,13 @@ public class Produce2 extends javax.swing.JFrame {
 
         Dash.setBackground(new java.awt.Color(35, 101, 51));
 
-        Title.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
+        Title.setFont(new java.awt.Font("Georgia", 1, 36));  
         Title.setForeground(new java.awt.Color(255, 255, 255));
         Title.setText("UFarm");
 
         HomePanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        Home.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Home.setFont(new java.awt.Font("Helvetica Neue", 0, 24));  
         Home.setForeground(new java.awt.Color(255, 255, 255));
         Home.setText("Home");
 
@@ -346,7 +346,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         AccPanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        Acc.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Acc.setFont(new java.awt.Font("Helvetica Neue", 0, 24));  
         Acc.setForeground(new java.awt.Color(255, 255, 255));
         Acc.setText("Logout");
 
@@ -367,10 +367,10 @@ public class Produce2 extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        ProducePanel.setBackground(new java.awt.Color(102, 51, 0)); // Current page highlight
+        ProducePanel.setBackground(new java.awt.Color(102, 51, 0));  
 
-        Produce.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        Produce.setForeground(new java.awt.Color(255, 255, 255)); // Set in constructor for current page
+        Produce.setFont(new java.awt.Font("Helvetica Neue", 1, 24));  
+        Produce.setForeground(new java.awt.Color(255, 255, 255));  
         Produce.setText("Produce");
 
         javax.swing.GroupLayout ProducePanelLayout = new javax.swing.GroupLayout(ProducePanel);
@@ -392,7 +392,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         FarmPanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        Farm.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Farm.setFont(new java.awt.Font("Helvetica Neue", 0, 24));  
         Farm.setForeground(new java.awt.Color(255, 255, 255));
         Farm.setText("Farm");
 
@@ -415,7 +415,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         CartPanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        CartMenu.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        CartMenu.setFont(new java.awt.Font("Helvetica Neue", 0, 24));  
         CartMenu.setForeground(new java.awt.Color(255, 255, 255));
         CartMenu.setText("Cart");
 
@@ -436,13 +436,13 @@ public class Produce2 extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        MyLove.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        MyLove.setFont(new java.awt.Font("Helvetica Neue", 0, 10));  
         MyLove.setForeground(new java.awt.Color(204, 204, 204));
         MyLove.setText("Agco, Jasmine Jane @2025");
 
         FeedbackPanel.setBackground(new java.awt.Color(33, 113, 0));
 
-        Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        Feedback.setFont(new java.awt.Font("Helvetica Neue", 0, 24));  
         Feedback.setForeground(new java.awt.Color(255, 255, 255));
         Feedback.setText("Feedback");
 
@@ -513,7 +513,7 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel2.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Georgia", 1, 24));  
         jLabel2.setForeground(new java.awt.Color(35, 101, 51));
         jLabel2.setText("Available Produce");
 
@@ -524,13 +524,13 @@ public class Produce2 extends javax.swing.JFrame {
             }
         });
 
-        // Search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/search.png"))); // NOI18N
+         
 
-        // Cart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ufarm/ufarm/images/grocery-store.png"))); // NOI18N
+         
 
-        Search.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\search.png")); // NOI18N
+        Search.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\search.png"));  
 
-        Cart.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\grocery-store.png")); // NOI18N
+        Cart.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\grocery-store.png"));  
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -574,8 +574,8 @@ public class Produce2 extends javax.swing.JFrame {
         Page1.setText("  1 ");
         Page1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        Page2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N // Styled in constructor
-        Page2.setForeground(new java.awt.Color(255, 255, 255));     // Styled in constructor
+        Page2.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
+        Page2.setForeground(new java.awt.Color(255, 255, 255));      
         Page2.setText("  2  ");
         Page2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
@@ -611,17 +611,17 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel14.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\GreenBeans.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\GreenBeans.jpg"));  
 
-        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("GreenBeans    Php 60.00");
 
         jButton1.setBackground(new java.awt.Color(35, 101, 51));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("+ ADD");
-        // NO addActionListener for jButton1ActionPerformed(evt) here. It's handled in constructor.
+         
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -656,17 +656,17 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel15.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Ginger.jpg")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Ginger.jpg"));  
 
-        jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Ginger            Php 90.00");
 
         jButton2.setBackground(new java.awt.Color(35, 101, 51));
-        jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("+ ADD");
-        // NO addActionListener for jButton2ActionPerformed(evt) here.
+         
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -701,17 +701,17 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Onion.jpg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Onion.jpg"));  
 
-        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Onion           Php 120.00");
 
         jButton3.setBackground(new java.awt.Color(35, 101, 51));
-        jButton3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("+ ADD");
-        // NO addActionListener for jButton3ActionPerformed(evt) here.
+         
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -746,17 +746,17 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel17.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Carrot.jpg")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Carrot.jpg"));  
 
-        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Carrot           Php 110.00");
 
         jButton5.setBackground(new java.awt.Color(35, 101, 51));
-        jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("+ ADD");
-        // NO addActionListener for jButton5ActionPerformed(evt) here.
+         
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -791,17 +791,17 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Chili.jpg")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Chili.jpg"));  
 
-        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Chili              Php 450.00");
 
         jButton4.setBackground(new java.awt.Color(35, 101, 51));
-        jButton4.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("+ ADD");
-        // NO addActionListener for jButton4ActionPerformed(evt) here.
+         
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -836,17 +836,17 @@ public class Produce2 extends javax.swing.JFrame {
 
         jPanel19.setBackground(new java.awt.Color(35, 101, 51));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Spinach.jpg")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\NetBeansProjects\\Ufarm_main\\UFarm\\src\\main\\java\\com\\ufarm\\ufarm\\images\\Spinach.jpg"));  
 
-        jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Spinach           Php 80.00");
 
         jButton6.setBackground(new java.awt.Color(35, 101, 51));
-        jButton6.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Helvetica Neue", 1, 14));  
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("+ ADD");
-        // NO addActionListener for jButton6ActionPerformed(evt) here.
+         
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -935,12 +935,12 @@ public class Produce2 extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    } 
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) { 
          String searchText = jTextField1.getText();
          System.out.println("Search on Produce Page 2: " + searchText);
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    } 
 
     public static void main(String args[]) {
         try {
@@ -958,7 +958,7 @@ public class Produce2 extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+     
     private javax.swing.JLabel Acc;
     private javax.swing.JPanel AccPanel;
     private javax.swing.JLabel Cart;
@@ -1016,5 +1016,5 @@ public class Produce2 extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner5;
     private javax.swing.JSpinner jSpinner6;
     private javax.swing.JTextField jTextField1;
-    // End of variables declaration//GEN-END:variables
+     
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.ufarm.ufarm;
 
 import java.awt.*;
@@ -37,16 +33,16 @@ public class Cart extends javax.swing.JFrame {
                 return new ImageIcon(imgURL);
             } else {
                 System.err.println("Couldn't find file: " + path);
-                return new ImageIcon(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB)); // Placeholder
+                return new ImageIcon(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB));  
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return new ImageIcon(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB)); // Placeholder
+            return new ImageIcon(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB));  
         }
     }
 
     public Cart() {
-        initComponents(); // This method should ideally handle instantiation of jLabel4-7 & jSeparators 2-3
+        initComponents();  
         this.cartItems = new ArrayList<>();
 
         ArrayList<Map<String, Object>> itemsFromProduce1 = com.ufarm.ufarm.Produce.getCartItems();
@@ -383,7 +379,7 @@ public class Cart extends javax.swing.JFrame {
             }
         }
 
-        if (selectedItemCount > 0 && selectedItemsDisplayPanel.getComponentCount() > 0) { // Check if components were added
+        if (selectedItemCount > 0 && selectedItemsDisplayPanel.getComponentCount() > 0) {  
             selectedItemsDisplayPanel.add(Box.createRigidArea(new Dimension(0, 5)));
             JSeparator itemSummarySeparator = new JSeparator();
             itemSummarySeparator.setForeground(new Color(220,220,220));
@@ -457,7 +453,7 @@ public class Cart extends javax.swing.JFrame {
     
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+     
     private void initComponents() {
 
         Dash = new javax.swing.JPanel();
@@ -486,10 +482,10 @@ public class Cart extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
 
-        // These components are part of the .form file definition for jPanel2.
-        // They should be instantiated by NetBeans generated code if the form is not corrupted.
-        // Here, we ensure they are available as class members.
-        // Their text and properties will be set in the custom jPanel2 setup.
+         
+         
+         
+         
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
@@ -805,29 +801,29 @@ public class Cart extends javax.swing.JFrame {
         ));
         jPanel2.setLayout(new BoxLayout(jPanel2, BoxLayout.Y_AXIS));
 
-        // Configure jLabel4 (Order Summary title label)
-        // This assumes jLabel4 is instantiated by NetBeans generated code
-        if (jLabel4 != null) { // Check if instantiated by generated code
-            jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 15)); // From .form
-            jLabel4.setText("Order Summary"); // From .form
-            // jPanel2.add(jLabel4); // If it's meant to be at the top, before the TitledBorder content
+         
+         
+        if (jLabel4 != null) {  
+            jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 15));  
+            jLabel4.setText("Order Summary");  
+             
         }
-         // jPanel2.add(Box.createRigidArea(new Dimension(0, 5))); // Spacer if jLabel4 is added
+          
 
-        // Configure jSeparator2
-        // This assumes jSeparator2 is instantiated by NetBeans generated code
+         
+         
         if (jSeparator2 != null) {
-            jSeparator2.setForeground(new java.awt.Color(35,101,53)); // from .form
+            jSeparator2.setForeground(new java.awt.Color(35,101,53));  
             jSeparator2.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
-            // jPanel2.add(jSeparator2); // Original .form might place this differently
-            // jPanel2.add(Box.createRigidArea(new Dimension(0,8)));
+             
+             
         }
 
 
         jPanel2.add(itemsSummaryScrollPane);
         jPanel2.add(Box.createRigidArea(new Dimension(0, 8)));
 
-        JSeparator itemsToTotalSeparator = new JSeparator(); // This is a new local separator
+        JSeparator itemsToTotalSeparator = new JSeparator();  
         itemsToTotalSeparator.setForeground(new Color(200,200,200));
         itemsToTotalSeparator.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
         jPanel2.add(itemsToTotalSeparator);
@@ -835,8 +831,8 @@ public class Cart extends javax.swing.JFrame {
 
         JPanel subtotalPanel = new JPanel(new BorderLayout(5,0));
         subtotalPanel.setOpaque(false);
-        jLabel5.setText("Subtotal"); // Use class member, set text from .form
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // Your custom font
+        jLabel5.setText("Subtotal");  
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 14));  
         subtotalValueLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 14));
         subtotalValueLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         subtotalValueLabel.setText("$0.00");
@@ -847,8 +843,8 @@ public class Cart extends javax.swing.JFrame {
 
         JPanel deliveryPanel = new JPanel(new BorderLayout(5,0));
         deliveryPanel.setOpaque(false);
-        jLabel6.setText("Delivery Fee"); // Use class member, set text from .form
-        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // Your custom font
+        jLabel6.setText("Delivery Fee");  
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 14));  
         deliveryFeeValueLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 14));
         deliveryFeeValueLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         deliveryFeeValueLabel.setText("$0.00");
@@ -857,15 +853,15 @@ public class Cart extends javax.swing.JFrame {
         jPanel2.add(deliveryPanel);
         jPanel2.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        jSeparator3.setForeground(new java.awt.Color(35,101,51)); // Use class member, from .form (color slightly different in your code)
+        jSeparator3.setForeground(new java.awt.Color(35,101,51));  
         jSeparator3.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
         jPanel2.add(jSeparator3);
         jPanel2.add(Box.createRigidArea(new Dimension(0, 10)));
 
         JPanel totalPanel = new JPanel(new BorderLayout(5,0));
         totalPanel.setOpaque(false);
-        jLabel7.setText("TOTAL"); // Use class member, set text from .form (font details differ)
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // Your custom font
+        jLabel7.setText("TOTAL");  
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 18));  
         jLabel7.setForeground(new java.awt.Color(35,101,51));
         totalValueLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 18));
         totalValueLabel.setForeground(new java.awt.Color(35,101,51));
@@ -877,7 +873,7 @@ public class Cart extends javax.swing.JFrame {
         jPanel2.add(Box.createRigidArea(new Dimension(0, 15)));
 
         jButton1.setBackground(new java.awt.Color(35, 101, 51));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // .form says 17
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 16));  
         jButton1.setForeground(Color.WHITE);
         jButton1.setText("Place Order");
         jButton1.setBorder(BorderFactory.createEmptyBorder(10,20,10,20));
@@ -909,10 +905,10 @@ public class Cart extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jCheckBox1)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)) // Adjusted size based on .form
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE))  
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE) // Adjusted size from .form for jPanel2
-                        .addGap(18, 18, 18)))) // Reduced end margin to better match .form layout
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)  
+                        .addGap(18, 18, 18))))  
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -921,23 +917,23 @@ public class Cart extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED) // Was 18, now 11 to match .form more closely if jPanel3/2 are shorter
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)  
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE) // Adjusted
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)) // Adjusted from .form (jPanel2 height)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)  
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))  
                 .addGap(18, 18, 18))
         );
 
         pack();
         setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+    } 
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) { 
         String searchText = jTextField1.getText();
         System.out.println("Search text: " + searchText);
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    } 
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) { 
         if (subtotal <= 0) {
             JOptionPane.showMessageDialog(this,
                 "No items selected or cart is empty. Please select items to proceed.",
@@ -989,9 +985,9 @@ public class Cart extends javax.swing.JFrame {
                 updateSelectAllCheckboxState();
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    } 
 
-    private void jCheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox1ItemStateChanged
+    private void jCheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) { 
          if (evt.getSource() == jCheckBox1) {
             boolean selectAll = jCheckBox1.isSelected();
             if (cartItems != null) {
@@ -1004,7 +1000,7 @@ public class Cart extends javax.swing.JFrame {
             }
             calculateOrderSummary();
          }
-    }//GEN-LAST:event_jCheckBox1ItemStateChanged
+    } 
 
     public static void main(String args[]) {
         try {
@@ -1020,7 +1016,7 @@ public class Cart extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new Cart().setVisible(true));
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+     
     private javax.swing.JLabel Acc;
     private javax.swing.JPanel AccPanel;
     private javax.swing.JPanel Dash;
@@ -1052,5 +1048,5 @@ public class Cart extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextField1;
-    // End of variables declaration//GEN-END:variables
+     
 }
